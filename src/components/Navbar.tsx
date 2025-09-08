@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,15 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <Globe className="h-8 w-8 text-blue-700" />
+              <div className="h-8 w-8 overflow-hidden rounded-sm">
+                <img
+                  src="/kakvera%20logo.PNG"
+                  alt="KAKVERA Global Services logo"
+                  className="h-full w-full object-cover object-left"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
               <div>
                 <div className="text-xl font-bold text-gray-900">KAKVERA GLOBAL</div>
                 <div className="text-xs text-blue-700 font-medium">SERVICES</div>

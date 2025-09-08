@@ -25,7 +25,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center space-x-2">
               <div className="h-8 w-8 overflow-hidden rounded-sm">
                 <img
-                  src="/kakvera%20logo.PNG"
+                  src="/logo.png"
                   alt="KAKVERA Global Services logo"
                   className="h-full w-full object-cover object-left"
                   loading="eager"

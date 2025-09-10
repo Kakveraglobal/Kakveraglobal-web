@@ -29,7 +29,7 @@ const Footer = () => {
               <a href="https://twitter.com/kakveraglobal" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="https://facebook.com/KakveraGlobalServices" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.facebook.com/kakveraglobal" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
             </div>

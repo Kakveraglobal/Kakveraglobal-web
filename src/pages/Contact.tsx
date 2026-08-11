@@ -25,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     const subject = `Quote Request from ${quoteForm.name}`;
     const body = `Name: ${quoteForm.name}%0D%0AEmail: ${quoteForm.email}%0D%0APhone: ${quoteForm.phone}%0D%0AProduct Details: ${quoteForm.productDetails}%0D%0AQuantity: ${quoteForm.quantity}%0D%0ADelivery Timeline: ${quoteForm.deliveryTimeline}`;
-    window.location.href = `mailto:info@kakveraglobal.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:trade@kakveraglobal.com?subject=${subject}&body=${body}`;
   };
 
   const handleContactSubmit = (e: React.FormEvent) => {

@@ -21,11 +21,34 @@ const Contact = () => {
 
   const [activeForm, setActiveForm] = useState<'quote' | 'contact'>('quote');
 
-  const handleQuoteSubmit = (e: React.FormEvent) => {
+  const buildQuoteBody = () =>
+    [
+      `Name: ${quoteForm.name}`,
+      `Email: ${quoteForm.email}`,
+      `Phone: ${quoteForm.phone}`,
+      `Product Details: ${quoteForm.productDetails}`,
+      `Quantity: ${quoteForm.quantity}`,
+      `Delivery Timeline: ${quoteForm.deliveryTimeline}`,
+    ].join('\n');
+
+  const handleQuoteEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Quote Request from ${quoteForm.name}`;
-    const body = `Name: ${quoteForm.name}%0D%0AEmail: ${quoteForm.email}%0D%0APhone: ${quoteForm.phone}%0D%0AProduct Details: ${quoteForm.productDetails}%0D%0AQuantity: ${quoteForm.quantity}%0D%0ADelivery Timeline: ${quoteForm.deliveryTimeline}`;
+    const subject = encodeURIComponent(`Quote Request from ${quoteForm.name}`);
+    const body = encodeURIComponent(buildQuoteBody());
     window.location.href = `mailto:trade@kakveraglobal.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleQuoteWhatsApp = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const form = e.currentTarget.form;
+    if (form && !form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const message = encodeURIComponent(
+      `Quote Request from ${quoteForm.name}\n\n${buildQuoteBody()}`
+    );
+    window.open(`https://wa.me/2348162777605?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleContactSubmit = (e: React.FormEvent) => {
@@ -137,7 +160,7 @@ const Contact = () => {
             {/* Forms */}
             <div>
               {activeForm === 'quote' ? (
-                <form onSubmit={handleQuoteSubmit} className="space-y-6">
+                <form onSubmit={handleQuoteEmail} className="space-y-6">
                   <div className="bg-white p-8 rounded-lg shadow-lg">
                     <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                       <Globe className="h-6 w-6 text-blue-700 mr-2" />
@@ -236,13 +259,23 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-200 flex items-center justify-center"
-                    >
-                      <Send className="h-5 w-5 mr-2" />
-                      Request Quote
-                    </button>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <button
+                        type="submit"
+                        className="w-full bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-200 flex items-center justify-center"
+                      >
+                        <Mail className="h-5 w-5 mr-2" />
+                        Email Quote
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleQuoteWhatsApp}
+                        className="w-full bg-green-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center"
+                      >
+                        <MessageCircle className="h-5 w-5 mr-2" />
+                        WhatsApp Quote
+                      </button>
+                    </div>
                   </div>
                 </form>
               ) : (

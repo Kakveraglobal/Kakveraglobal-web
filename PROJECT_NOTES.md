@@ -8,6 +8,7 @@ Live site: https://www.kakveraglobal.com (GitHub Pages)
 ## Done
 
 - **Request a Quote** form now emails `trade@kakveraglobal.com` (was `info@`). Merged via [PR #1](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/1).
+- **Request a Quote** also offers WhatsApp to `+234 816 277 7605` beside email (Email Quote / WhatsApp Quote buttons).
 
 ## Decisions / open items
 
@@ -22,5 +23,5 @@ Live site: https://www.kakveraglobal.com (GitHub Pages)
 
 ## Contact routing (current)
 
-- Quote form → `trade@kakveraglobal.com`
+- Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 816 277 7605` (side-by-side Email / WhatsApp buttons)
 - General contact form still routes by subject (General/Trade/Imports/Exports/Support) to the matching `@kakveraglobal.com` inbox

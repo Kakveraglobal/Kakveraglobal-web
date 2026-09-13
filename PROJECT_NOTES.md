@@ -9,6 +9,7 @@ Live site: https://www.kakveraglobal.com (GitHub Pages)
 
 - **Request a Quote** form now emails `trade@kakveraglobal.com` (was `info@`). Merged via [PR #1](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/1).
 - **Request a Quote** also offers WhatsApp to `+234 816 277 7605` beside email (Email Quote / WhatsApp Quote buttons).
+- **Shipping Rates** page at `/shipping-rates` with structured rates for China (general + gadgets), Turkey, UK ↔ Nigeria, and Nigeria ↔ Canada; rate-card image downloads in `/public/rate-cards/`.
 
 ## Decisions / open items
 

@@ -10,6 +10,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Shipping Rates', href: '/shipping-rates' },
     { name: 'Our Brands', href: '/our-brands' },
     { name: 'Why Choose Us', href: '/why-choose-us' },
     { name: 'Contact', href: '/contact' },

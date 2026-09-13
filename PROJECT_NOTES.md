@@ -1,28 +1,53 @@
 # Kakvera Global — project notes
 
-Saved from Cursor cloud agent session (11 Aug 2026).  
-Agent chat: https://cursor.com/agents/bc-c4c38259-bf1d-4b05-abf8-bd6b4b59838a  
-Repo: `Kakveraglobal/Kakveraglobal-web`  
-Live site: https://www.kakveraglobal.com (GitHub Pages)
+Ongoing notes for the Kakvera website so later sessions can pick up quickly.
+
+**Agent chat (this project):** https://cursor.com/agents/bc-c4c38259-bf1d-4b05-abf8-bd6b4b59838a  
+**Repo:** `Kakveraglobal/Kakveraglobal-web`  
+**Live site:** https://www.kakveraglobal.com (GitHub Pages)  
+**Stack:** Vite + React + TypeScript + Tailwind  
+**Last updated:** 13 Sep 2026
 
 ## Done
 
-- **Request a Quote** form now emails `trade@kakveraglobal.com` (was `info@`). Merged via [PR #1](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/1).
-- **Request a Quote** also offers WhatsApp to `+234 816 277 7605` beside email (Email Quote / WhatsApp Quote buttons).
-- **Shipping Rates** page at `/shipping-rates` with structured rates for China (general + gadgets), Turkey, UK ↔ Nigeria, and Nigeria ↔ Canada; rate-card image downloads in `/public/rate-cards/`.
+- **Quote → trade email** — Request a Quote mailto goes to `trade@kakveraglobal.com`. [PR #1](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/1)
+- **Quote → WhatsApp** — Side-by-side **Email Quote** and **WhatsApp Quote** buttons; WhatsApp opens `+234 816 277 7605` with prefilled details. [PR #3](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/3)
+- **Shipping Rates page** — `/shipping-rates` with tabbed corridors from the official rate cards. [PR #4](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/4)
+  - China → Nigeria (general air/sea)
+  - China → Nigeria Gadgets Express
+  - Turkey → Nigeria
+  - UK ↔ Nigeria
+  - Nigeria ↔ Canada
+  - Structured tables + notes (not image-only)
+  - Downloadable rate-card images in `/public/rate-cards/`
+  - Linked from navbar and footer
 
-## Decisions / open items
+## Design / content decisions
 
-### Hosting
-- Keep **GitHub Pages** for now (static Vite + React site; deploy workflow already on `main`).
-- Consider **Netlify** later if you want cleaner SPA deep links, PR previews, or built-in forms.
-
-### Signup / login (paused — revisit later)
-- Real auth needs a **database** (or an auth product that includes one). This site is static today, so frontend-only auth is not enough.
-- Recommended starting path: **Supabase** or **Firebase** (handles signup/login + DB without a custom backend).
-- Before building: decide what login is for (customer portal, quote history, admin only, etc.).
+- Prefer **typed rates on the site** over pasting rate-card images as the main content; keep images as downloads.
+- Rate cards can be read from photos and converted into clean web tables.
+- Site stays on existing Kakvera blue/white visual language.
 
 ## Contact routing (current)
 
-- Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 816 277 7605` (side-by-side Email / WhatsApp buttons)
-- General contact form still routes by subject (General/Trade/Imports/Exports/Support) to the matching `@kakveraglobal.com` inbox
+- Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 816 277 7605`
+- General contact form still routes by subject (General / Trade / Imports / Exports / Support)
+- Rate cards also list: `+234 815 613 1470`, `imports@`, `exports@`, `logistics@kakveraglobal.com`
+
+## Open / paused
+
+### Hosting
+- Keep **GitHub Pages** for now.
+- Consider **Netlify** later for cleaner SPA deep-link status codes, PR previews, or forms.
+- Note: GitHub Pages serves SPA routes via `404.html` fallback (HTTP 404 status, page still loads).
+
+### Signup / login (paused)
+- Needs a database or auth product (e.g. **Supabase** / **Firebase**).
+- Decide purpose first: customer portal, quote history, admin-only, etc.
+
+## Key files
+
+- `src/pages/Contact.tsx` — quote + contact forms
+- `src/pages/ShippingRates.tsx` — shipping rates UI
+- `public/rate-cards/` — original rate-card JPGs
+- `.github/workflows/deploy.yml` — GitHub Pages deploy on push to `main`

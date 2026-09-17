@@ -6,7 +6,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 17 Sep 2026
+**Last updated:** 17 Sep 2026 (tracking live)
 
 ## Done
 
@@ -21,7 +21,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Structured tables + notes (not image-only)
   - Downloadable rate-card images in `/public/rate-cards/`
   - Linked from navbar and footer
-- **Track Shipment page** — `/track-shipment` UI ready; looks up by `KGS Shipment ID` and shows status, route, mode, item, weight, last update (no customer name/phone). Live Google Sheet connection pending Web App URL.
+- **Track Shipment page** — `/track-shipment` live with Google Sheets lookup by `KGS Shipment ID` (status, route, mode, item, weight, last update; no customer name/phone).
 
 ## Design / content decisions
 
@@ -65,9 +65,11 @@ Lookup URL shape: `YOUR_WEB_APP_URL?id=KGS-CN-2609-001`
 - Needs a database or auth product (e.g. **Supabase** / **Firebase**).
 - Decide purpose first: customer portal, quote history, admin-only, etc.
 
-### Track shipment (waiting on Apps Script redeploy)
-- Page + URL wired: `SHIPMENT_LOOKUP_URL` in `src/config/shipmentTracking.ts`
-- Current Web App URL returns **"Script function not found: doGet"** until the script is saved and redeployed as a new version with the `doGet` code.
+### Track shipment (live)
+- Page: `/track-shipment`
+- Google Apps Script Web App connected and returning live sheet data
+- Public fields only: ID, route, mode, item, weight, status, last update
+- Test ID: `KGS-CN-2609-001` → IN TRANSIT
 
 ## Key files
 

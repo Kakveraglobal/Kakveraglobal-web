@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import ShippingRates from './pages/ShippingRates';
+import TrackShipment from './pages/TrackShipment';
 import OurBrands from './pages/OurBrands';
 import WhyChooseUs from './pages/WhyChooseUs';
 import Contact from './pages/Contact';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/shipping-rates" element={<ShippingRates />} />
+            <Route path="/track-shipment" element={<TrackShipment />} />
             <Route path="/our-brands" element={<OurBrands />} />
             <Route path="/why-choose-us" element={<WhyChooseUs />} />
             <Route path="/contact" element={<Contact />} />

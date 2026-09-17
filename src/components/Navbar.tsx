@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Shipping Rates', href: '/shipping-rates' },
+    { name: 'Track Shipment', href: '/track-shipment' },
     { name: 'Our Brands', href: '/our-brands' },
     { name: 'Why Choose Us', href: '/why-choose-us' },
     { name: 'Contact', href: '/contact' },

@@ -65,8 +65,9 @@ Lookup URL shape: `YOUR_WEB_APP_URL?id=KGS-CN-2609-001`
 - Needs a database or auth product (e.g. **Supabase** / **Firebase**).
 - Decide purpose first: customer portal, quote history, admin-only, etc.
 
-### Track shipment (in progress)
-- Page + Apps Script ready; waiting for deployed Google Web App URL to enable live lookups.
+### Track shipment (waiting on Apps Script redeploy)
+- Page + URL wired: `SHIPMENT_LOOKUP_URL` in `src/config/shipmentTracking.ts`
+- Current Web App URL returns **"Script function not found: doGet"** until the script is saved and redeployed as a new version with the `doGet` code.
 
 ## Key files
 

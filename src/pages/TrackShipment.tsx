@@ -54,7 +54,19 @@ const TrackShipment = () => {
         throw new Error('Network error');
       }
 
-      const data = await response.json();
+      const raw = await response.text();
+      let data: { ok?: boolean; error?: string; shipment?: PublicShipment };
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        setLookup({
+          status: 'error',
+          message:
+            'Tracking connection needs a quick fix on the Google Sheet side. Please contact KGS or try again shortly.',
+        });
+        return;
+      }
+
       if (!data?.ok || !data.shipment) {
         setLookup({
           status: 'error',

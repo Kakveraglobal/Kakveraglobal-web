@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, Globe, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Globe, MessageCircle, Users } from 'lucide-react';
 
 const Contact = () => {
   const [quoteForm, setQuoteForm] = useState({
@@ -48,7 +48,7 @@ const Contact = () => {
     const message = encodeURIComponent(
       `Quote Request from ${quoteForm.name}\n\n${buildQuoteBody()}`
     );
-    window.open(`https://wa.me/2348162777605?text=${message}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/2348156131470?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleContactSubmit = (e: React.FormEvent) => {
@@ -88,8 +88,8 @@ const Contact = () => {
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
               <Phone className="h-12 w-12 text-blue-700 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone & WhatsApp</h3>
-              <a href="tel:+2348162777605" className="text-blue-700 hover:text-blue-800 font-medium">
-                +234 816 277 7605
+              <a href="tel:+2348156131470" className="text-blue-700 hover:text-blue-800 font-medium">
+                +234 815 613 1470
               </a>
             </div>
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
@@ -103,15 +103,15 @@ const Contact = () => {
               <MapPin className="h-12 w-12 text-blue-700 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
               <p className="text-gray-600 text-sm">
-                14, Blueroof Avenue, off Lasu-Isheri Road, Lagos, Nigeria
+                Airport Road, Ikeja, Lagos
               </p>
             </div>
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
               <Clock className="h-12 w-12 text-blue-700 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Business Hours</h3>
               <p className="text-gray-600 text-sm">
-                Mon-Fri: 9am-6pm WAT<br />
-                Sat: 12pm-4pm WAT
+                Mon–Sat: 10am–7pm WAT<br />
+                Sunday: Closed
               </p>
             </div>
           </div>
@@ -387,8 +387,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900">Address</h4>
                       <p className="text-gray-600">
-                        14, Blueroof Avenue, off Lasu-Isheri Road<br />
-                        Lagos, Nigeria
+                        Airport Road, Ikeja, Lagos
                       </p>
                     </div>
                   </div>
@@ -397,8 +396,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900">Business Hours</h4>
                       <p className="text-gray-600">
-                        Monday - Friday: 9:00 AM - 6:00 PM WAT<br />
-                        Saturday: 12:00 PM - 4:00 PM WAT<br />
+                        Monday – Saturday: 10:00 AM – 7:00 PM WAT<br />
                         Sunday: Closed
                       </p>
                     </div>
@@ -447,11 +445,11 @@ const Contact = () => {
                   Speak directly with our trade specialists for immediate assistance
                 </p>
                 <a
-                  href="tel:+2348162777605"
+                  href="tel:+2348156131470"
                   className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors duration-200"
                 >
                   <Phone className="h-5 w-5 mr-2" />
-                  Call +234 816 277 7605
+                  Call +234 815 613 1470
                 </a>
               </div>
             </div>
@@ -459,21 +457,44 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Partner With Us */}
       <section className="py-12 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Find Us on the Map</h3>
-              <p className="text-gray-600 mb-6">
-                Located in the heart of Lagos, easily accessible for meetings and consultations
-              </p>
-            </div>
-            <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500 text-lg">Interactive Map</p>
-                <p className="text-gray-400 text-sm">14, Blueroof Avenue, off Lasu-Isheri Road, Lagos</p>
+            <div className="p-8 lg:p-12">
+              <div className="max-w-3xl mx-auto text-center">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                  Partner With Us
+                </h3>
+                <p className="text-gray-600 mb-8">
+                  Are you a supplier, forwarder, or business looking to collaborate with Kakvera Global?
+                  Our partnership form is coming soon — in the meantime, reach out and we’ll connect with you.
+                </p>
+                <div className="border-2 border-dashed border-blue-200 rounded-lg bg-blue-50 px-6 py-12">
+                  <Users className="h-12 w-12 text-blue-700 mx-auto mb-4" />
+                  <p className="text-lg font-semibold text-blue-800 mb-2">Partnership form coming soon</p>
+                  <p className="text-sm text-blue-700 mb-6">
+                    We’ll add an application form here shortly for suppliers and strategic partners.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                      href="mailto:trade@kakveraglobal.com?subject=Partnership%20Inquiry"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
+                    >
+                      <Mail className="h-5 w-5 mr-2" />
+                      Email trade@kakveraglobal.com
+                    </a>
+                    <a
+                      href="https://wa.me/2348156131470"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
+                    >
+                      <MessageCircle className="h-5 w-5 mr-2" />
+                      WhatsApp us
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

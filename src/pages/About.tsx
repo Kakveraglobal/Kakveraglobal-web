@@ -54,7 +54,7 @@ const About = () => {
                   <Award className="h-6 w-6 text-blue-700" />
                   <div>
                     <div className="font-semibold text-gray-900">RC Number</div>
-                    <div className="text-gray-600">2342761</div>
+                    <div className="text-gray-600">9263583</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">

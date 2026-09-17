@@ -151,7 +151,7 @@ const WhyChooseUs = () => {
             <div className="text-center">
               <Award className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">CAC Registered</h3>
-              <p className="text-blue-100 text-sm">RC: 2342761</p>
+              <p className="text-blue-100 text-sm">RC: 9263583</p>
             </div>
             <div className="text-center">
               <Shield className="h-16 w-16 text-yellow-400 mx-auto mb-4" />

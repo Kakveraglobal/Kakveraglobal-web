@@ -11,7 +11,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 ## Done
 
 - **Quote → trade email** — Request a Quote mailto goes to `trade@kakveraglobal.com`. [PR #1](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/1)
-- **Quote → WhatsApp** — Side-by-side **Email Quote** and **WhatsApp Quote** buttons; WhatsApp opens `+234 816 277 7605` with prefilled details. [PR #3](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/3)
+- **Quote → WhatsApp** — Side-by-side **Email Quote** and **WhatsApp Quote** buttons; WhatsApp opens `+234 815 613 1470` with prefilled details. [PR #3](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/3)
 - **Shipping Rates page** — `/shipping-rates` with tabbed corridors from the official rate cards. [PR #4](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/4)
   - China → Nigeria (general air/sea)
   - China → Nigeria Gadgets Express
@@ -33,9 +33,10 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 
 ## Contact routing (current)
 
-- Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 816 277 7605`
+- Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 815 613 1470`
 - General contact form still routes by subject (General / Trade / Imports / Exports / Support)
-- Rate cards also list: `+234 815 613 1470`, `imports@`, `exports@`, `logistics@kakveraglobal.com`
+- Phone: `+234 815 613 1470` · Address: Airport Road, Ikeja, Lagos · Hours: Mon–Sat 10am–7pm WAT · RC: 9263583
+- Rate cards also list: `imports@`, `exports@`, `logistics@kakveraglobal.com`
 
 ## Shipment tracking ↔ Google Sheets (setup)
 

@@ -179,6 +179,30 @@ const Home = () => {
 
       {/* Client Success Stories section removed per request */}
 
+      {/* Business Hours */}
+      <section className="py-10 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 rounded-lg bg-blue-50 px-6 py-5">
+            <div className="flex items-start gap-3">
+              <Clock className="h-6 w-6 text-blue-700 mt-0.5 flex-shrink-0" />
+              <div>
+                <h2 className="text-lg font-bold text-gray-900">Business Hours</h2>
+                <p className="text-gray-600">
+                  Monday to Saturday · 10:00 AM – 7:00 PM WAT · Sunday closed
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
+            >
+              Contact Us
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-blue-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

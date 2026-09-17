@@ -193,7 +193,7 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+2348162777605"
+              href="tel:+2348156131470"
               className="inline-flex items-center px-8 py-3 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors duration-200"
             >
               <Phone className="mr-2 h-5 w-5" />

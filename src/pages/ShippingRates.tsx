@@ -118,7 +118,7 @@ const ShippingRates = () => {
               Request a Quote
             </Link>
             <a
-              href="https://wa.me/2348162777605"
+              href="https://wa.me/2348156131470"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-500 transition-colors"
@@ -127,11 +127,11 @@ const ShippingRates = () => {
               WhatsApp KGS
             </a>
             <a
-              href="tel:+2348162777605"
+              href="tel:+2348156131470"
               className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/30"
             >
               <Phone className="h-5 w-5 mr-2" />
-              +234 816 277 7605
+              +234 815 613 1470
             </a>
           </div>
         </div>

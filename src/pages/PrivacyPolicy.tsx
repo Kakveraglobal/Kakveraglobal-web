@@ -130,8 +130,8 @@ const PrivacyPolicy = () => {
                       <p className="text-gray-700">
                         <strong>KAKVERA GLOBAL SERVICES</strong><br />
                         Email: <a href="mailto:info@kakveraglobal.com" className="text-blue-700">info@kakveraglobal.com</a><br />
-                        Phone: <a href="tel:+2348162777605" className="text-blue-700">+234 816 277 7605</a><br />
-                        Address: 14, Blueroof Avenue, off Lasu-Isheri Road, Lagos, Nigeria
+                        Phone: <a href="tel:+2348156131470" className="text-blue-700">+234 815 613 1470</a><br />
+                        Address: Airport Road, Ikeja, Lagos
                       </p>
                     </div>
                   </div>
@@ -152,7 +152,7 @@ const PrivacyPolicy = () => {
                   <p className="text-sm text-gray-500 text-center">
                     Last Updated: January 2025<br />
                     Effective Date: January 1, 2025<br />
-                    RC: 2342761
+                    RC: 9263583
                   </p>
                 </div>
               </div>

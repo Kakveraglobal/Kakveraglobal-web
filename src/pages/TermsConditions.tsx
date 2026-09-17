@@ -27,7 +27,7 @@ const TermsConditions = () => {
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-600 mb-8 leading-relaxed">
                 These Terms and Conditions ("Terms") govern your use of the website and services provided by 
-                KAKVERA GLOBAL SERVICES, a company registered in Nigeria with RC Number 2342761. 
+                KAKVERA GLOBAL SERVICES, a company registered in Nigeria with RC Number 9263583. 
                 By accessing our website or using our services, you agree to be bound by these Terms.
               </p>
 
@@ -50,10 +50,10 @@ const TermsConditions = () => {
                   <div className="pl-8 bg-gray-50 p-4 rounded-lg">
                     <p className="text-gray-700">
                       <strong>Company Name:</strong> KAKVERA GLOBAL SERVICES<br />
-                      <strong>Registration Number:</strong> RC 2342761<br />
-                      <strong>Registered Address:</strong> 14, Blueroof Avenue, off Lasu-Isheri Road, Lagos, Nigeria<br />
+                      <strong>Registration Number:</strong> RC 9263583<br />
+                      <strong>Registered Address:</strong> Airport Road, Ikeja, Lagos<br />
                       <strong>Contact Email:</strong> info@kakveraglobal.com<br />
-                      <strong>Phone:</strong> +234 816 277 7605
+                      <strong>Phone:</strong> +234 815 613 1470
                     </p>
                   </div>
                 </section>
@@ -185,8 +185,8 @@ const TermsConditions = () => {
                       <p className="text-gray-700">
                         <strong>KAKVERA GLOBAL SERVICES</strong><br />
                         Email: <a href="mailto:info@kakveraglobal.com" className="text-blue-700">info@kakveraglobal.com</a><br />
-                        Phone: <a href="tel:+2348162777605" className="text-blue-700">+234 816 277 7605</a><br />
-                        Address: 14, Blueroof Avenue, off Lasu-Isheri Road, Lagos, Nigeria
+                        Phone: <a href="tel:+2348156131470" className="text-blue-700">+234 815 613 1470</a><br />
+                        Address: Airport Road, Ikeja, Lagos
                       </p>
                     </div>
                   </div>
@@ -196,7 +196,7 @@ const TermsConditions = () => {
                   <p className="text-sm text-gray-500 text-center">
                     Last Updated: January 2025<br />
                     Effective Date: January 1, 2025<br />
-                    KAKVERA GLOBAL SERVICES - RC: 2342761
+                    KAKVERA GLOBAL SERVICES - RC: 9263583
                   </p>
                 </div>
               </div>

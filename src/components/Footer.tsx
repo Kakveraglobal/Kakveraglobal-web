@@ -54,12 +54,12 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5" />
                 <div className="text-gray-300 text-sm">
-                  14, Blueroof Avenue, off Lasu-Isheri Road, Lagos, Nigeria
+                  Airport Road, Ikeja, Lagos
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-blue-400" />
-                <div className="text-gray-300 text-sm">+234 816 277 7605</div>
+                <div className="text-gray-300 text-sm">+234 815 613 1470</div>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-blue-400" />
@@ -68,7 +68,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Clock className="h-5 w-5 text-blue-400" />
                 <div className="text-gray-300 text-sm">
-                  Mon-Fri: 9am-6pm WAT<br />Sat: 12pm-4pm WAT
+                  Mon–Sat: 10am–7pm WAT<br />Sunday: Closed
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 Kakvera Global Services. All rights reserved. RC: 2342761
+              © 2025 Kakvera Global Services. All rights reserved. RC: 9263583
             </div>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">

@@ -6,7 +6,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 13 Sep 2026
+**Last updated:** 17 Sep 2026
 
 ## Done
 
@@ -21,18 +21,38 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Structured tables + notes (not image-only)
   - Downloadable rate-card images in `/public/rate-cards/`
   - Linked from navbar and footer
+- **Track Shipment page** — `/track-shipment` UI ready; looks up by `KGS Shipment ID` and shows status, route, mode, item, weight, last update (no customer name/phone). Live Google Sheet connection pending Web App URL.
 
 ## Design / content decisions
 
 - Prefer **typed rates on the site** over pasting rate-card images as the main content; keep images as downloads.
 - Rate cards can be read from photos and converted into clean web tables.
 - Site stays on existing Kakvera blue/white visual language.
+- Public tracking fields: Shipment ID, Route, Mode, Status, Last Update, Item Description, Weight/CBM.
+- Keep private: Customer Name, Phone, Forwarder, Next Action, Assigned To.
 
 ## Contact routing (current)
 
 - Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 816 277 7605`
 - General contact form still routes by subject (General / Trade / Imports / Exports / Support)
 - Rate cards also list: `+234 815 613 1470`, `imports@`, `exports@`, `logistics@kakveraglobal.com`
+
+## Shipment tracking ↔ Google Sheets (setup)
+
+Source sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route, Mode, Cargo Type, Item Description, Qty, Weight/CBM, Forwarder, Origin Warehouse, Date Warehouse, Dispatch Date, Current Status, Last Update, Next Action, Next Action Date, Assigned To.
+
+### Connect live data
+1. Open the shipments Google Sheet.
+2. **Extensions → Apps Script**.
+3. Paste code from `google-apps-script/shipment-lookup.gs` (replace any default code).
+4. If the data is not on the first tab, set `SHEET_NAME` in the script to the exact tab name.
+5. **Deploy → New deployment → Web app**
+   - Execute as: **Me**
+   - Who has access: **Anyone**
+6. Copy the Web App URL and put it in `src/config/shipmentTracking.ts` as `SHIPMENT_LOOKUP_URL` (or send it to Cursor to wire in).
+7. Redeploy the website after the URL is set.
+
+Lookup URL shape: `YOUR_WEB_APP_URL?id=KGS-CN-2609-001`
 
 ## Open / paused
 
@@ -45,9 +65,15 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 - Needs a database or auth product (e.g. **Supabase** / **Firebase**).
 - Decide purpose first: customer portal, quote history, admin-only, etc.
 
+### Track shipment (in progress)
+- Page + Apps Script ready; waiting for deployed Google Web App URL to enable live lookups.
+
 ## Key files
 
 - `src/pages/Contact.tsx` — quote + contact forms
 - `src/pages/ShippingRates.tsx` — shipping rates UI
+- `src/pages/TrackShipment.tsx` — shipment tracking UI
+- `src/config/shipmentTracking.ts` — Web App URL config
+- `google-apps-script/shipment-lookup.gs` — secure sheet lookup (public fields only)
 - `public/rate-cards/` — original rate-card JPGs
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on push to `main`

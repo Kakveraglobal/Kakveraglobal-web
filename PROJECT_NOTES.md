@@ -6,78 +6,72 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 17 Sep 2026 (tracking live)
+**Last updated:** 17 Sep 2026
 
 ## Done
 
 - **Quote → trade email** — Request a Quote mailto goes to `trade@kakveraglobal.com`. [PR #1](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/1)
-- **Quote → WhatsApp** — Side-by-side **Email Quote** and **WhatsApp Quote** buttons; WhatsApp opens `+234 815 613 1470` with prefilled details. [PR #3](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/3)
-- **Shipping Rates page** — `/shipping-rates` with tabbed corridors from the official rate cards. [PR #4](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/4)
+- **Quote → WhatsApp** — Side-by-side **Email Quote** / **WhatsApp Quote** buttons. [PR #3](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/3)
+- **Shipping Rates page** — `/shipping-rates` with tabbed corridors + downloadable rate cards. [PR #4](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/4)
   - China → Nigeria (general air/sea)
   - China → Nigeria Gadgets Express
   - Turkey → Nigeria
   - UK ↔ Nigeria
   - Nigeria ↔ Canada
-  - Structured tables + notes (not image-only)
-  - Downloadable rate-card images in `/public/rate-cards/`
-  - Linked from navbar and footer
-- **Track Shipment page** — `/track-shipment` live with Google Sheets lookup by `KGS Shipment ID` (status, route, mode, item, weight, last update; no customer name/phone).
+- **Track Shipment page** — `/track-shipment` live via Google Apps Script + Sheets. [PR #6](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/6) / [PR #7](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/7)
+- **Contact details refresh** — [PR #10](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/10)
+  - Phone / WhatsApp: `+234 815 613 1470`
+  - Address: Airport Road, Ikeja, Lagos
+  - Hours: Mon–Sat 10am–7pm WAT (Sunday closed); shown on Home, Contact, Footer
+  - RC: `9263583`
+  - Contact map removed → **Partner With Us — coming soon** placeholder
 
-## Design / content decisions
+## Company / contact (current)
 
-- Prefer **typed rates on the site** over pasting rate-card images as the main content; keep images as downloads.
-- Rate cards can be read from photos and converted into clean web tables.
-- Site stays on existing Kakvera blue/white visual language.
-- Public tracking fields: Shipment ID, Route, Mode, Status, Last Update, Item Description, Weight/CBM.
-- Keep private: Customer Name, Phone, Forwarder, Next Action, Assigned To.
+- Phone / WhatsApp: `+234 815 613 1470`
+- Address: Airport Road, Ikeja, Lagos
+- Hours: Monday–Saturday 10:00 AM – 7:00 PM WAT · Sunday closed
+- RC: 9263583
+- Quote form → `trade@kakveraglobal.com` **or** WhatsApp
+- General contact form routes by subject (General / Trade / Imports / Exports / Support)
+- Also used: `info@`, `imports@`, `exports@`, `support@`, `logistics@kakveraglobal.com`
 
-## Contact routing (current)
+## Shipment tracking ↔ Google Sheets
 
-- Quote form → `trade@kakveraglobal.com` **or** WhatsApp `+234 815 613 1470`
-- General contact form still routes by subject (General / Trade / Imports / Exports / Support)
-- Phone: `+234 815 613 1470` · Address: Airport Road, Ikeja, Lagos · Hours: Mon–Sat 10am–7pm WAT · RC: 9263583
-- Rate cards also list: `imports@`, `exports@`, `logistics@kakveraglobal.com`
+**Lookup key:** `KGS Shipment ID` (column A), e.g. `KGS-CN-2609-001`  
+**Public fields shown:** Route, Mode, Item Description, Weight/CBM, Current Status, Last Update  
+**Keep private:** Customer Name, Phone, Forwarder, Next Action, Assigned To
 
-## Shipment tracking ↔ Google Sheets (setup)
+**Live Web App URL** (in `src/config/shipmentTracking.ts`):  
+`https://script.google.com/macros/s/AKfycbyo1bvMRWmLalSyh9PptpcHF-DKuT7vxhh0O0IuGZrreo4npQ1gVIWgGdt6RqnO9bxxWA/exec`
 
-Source sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route, Mode, Cargo Type, Item Description, Qty, Weight/CBM, Forwarder, Origin Warehouse, Date Warehouse, Dispatch Date, Current Status, Last Update, Next Action, Next Action Date, Assigned To.
+**Script source:** `google-apps-script/shipment-lookup.gs`  
+- Searches all sheet tabs, normalizes IDs  
+- If redeploying: Extensions → Apps Script → paste script → Deploy → New version → Web app (Execute as Me, Anyone)
 
-### Connect live data
-1. Open the shipments Google Sheet.
-2. **Extensions → Apps Script**.
-3. Paste code from `google-apps-script/shipment-lookup.gs` (replace any default code).
-4. If the data is not on the first tab, set `SHEET_NAME` in the script to the exact tab name.
-5. **Deploy → New deployment → Web app**
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-6. Copy the Web App URL and put it in `src/config/shipmentTracking.ts` as `SHIPMENT_LOOKUP_URL` (or send it to Cursor to wire in).
-7. Redeploy the website after the URL is set.
+**Test:** `WEB_APP_URL?id=KGS-CN-2609-001` should return JSON `ok:true`
 
-Lookup URL shape: `YOUR_WEB_APP_URL?id=KGS-CN-2609-001`
+Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route, Mode, Cargo Type, Item Description, Qty, Weight/CBM, Forwarder, Origin Warehouse, Date Warehouse, Dispatch Date, Current Status, Last Update, Next Action, Next Action Date, Assigned To
 
-## Open / paused
+## Design decisions
 
-### Hosting
-- Keep **GitHub Pages** for now.
-- Consider **Netlify** later for cleaner SPA deep-link status codes, PR previews, or forms.
-- Note: GitHub Pages serves SPA routes via `404.html` fallback (HTTP 404 status, page still loads).
+- Typed rates on the site (not image-only); keep rate-card images as downloads in `/public/rate-cards/`
+- Existing Kakvera blue/white visual language
+- Stay on GitHub Pages for now (SPA deep links use `404.html` fallback)
 
-### Signup / login (paused)
-- Needs a database or auth product (e.g. **Supabase** / **Firebase**).
-- Decide purpose first: customer portal, quote history, admin-only, etc.
+## Open / next
 
-### Track shipment (live)
-- Page: `/track-shipment`
-- Google Apps Script Web App connected and returning live sheet data
-- Public fields only: ID, route, mode, item, weight, status, last update
-- Test ID: `KGS-CN-2609-001` → IN TRANSIT
+- **Partner form** — placeholder on Contact; waiting for real form to embed
+- **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
+- **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
 
 ## Key files
 
-- `src/pages/Contact.tsx` — quote + contact forms
+- `src/pages/Contact.tsx` — quote + contact + partner placeholder
+- `src/pages/Home.tsx` — business hours highlight
 - `src/pages/ShippingRates.tsx` — shipping rates UI
 - `src/pages/TrackShipment.tsx` — shipment tracking UI
-- `src/config/shipmentTracking.ts` — Web App URL config
-- `google-apps-script/shipment-lookup.gs` — secure sheet lookup (public fields only)
+- `src/config/shipmentTracking.ts` — Web App URL
+- `google-apps-script/shipment-lookup.gs` — secure sheet lookup
 - `public/rate-cards/` — original rate-card JPGs
-- `.github/workflows/deploy.yml` — GitHub Pages deploy on push to `main`
+- `.github/workflows/deploy.yml` — GitHub Pages deploy on `main`

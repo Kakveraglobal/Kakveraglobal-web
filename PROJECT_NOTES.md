@@ -6,7 +6,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 17 Sep 2026
+**Last updated:** 18 Sep 2026
 
 ## Done
 
@@ -25,6 +25,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Hours: Mon–Sat 10am–7pm WAT (Sunday closed); shown on Home, Contact, Footer
   - RC: `9263583`
   - Contact map removed → **Partner With Us — coming soon** placeholder
+- **Brand imagery update** — Home hero, About Our Story, and all four Services section images replaced with KGS branded assets in `/public/`.
 
 ## Company / contact (current)
 

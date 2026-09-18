@@ -57,9 +57,17 @@ const Footer = () => {
                   Airport Road, Ikeja, Lagos
                 </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <div className="text-gray-300 text-sm">+234 815 613 1470</div>
+              <div className="flex items-start space-x-2">
+                <Phone className="h-5 w-5 text-blue-400 mt-0.5" />
+                <div className="text-gray-300 text-sm">
+                  <a href="tel:+2348162777605" className="hover:text-white transition-colors">
+                    +234 816 277 7605
+                  </a>
+                  <br />
+                  <a href="tel:+2348156131470" className="hover:text-white transition-colors">
+                    +234 815 613 1470
+                  </a>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-blue-400" />

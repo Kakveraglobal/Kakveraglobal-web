@@ -20,7 +20,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Nigeria ↔ Canada
 - **Track Shipment page** — `/track-shipment` live via Google Apps Script + Sheets. [PR #6](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/6) / [PR #7](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/7)
 - **Contact details refresh** — [PR #10](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/10)
-  - Phone / WhatsApp: `+234 815 613 1470`
+  - Phone / WhatsApp (main): `+234 816 277 7605` · Secondary: `+234 815 613 1470`
   - Address: Airport Road, Ikeja, Lagos
   - Hours: Mon–Sat 10am–7pm WAT (Sunday closed); shown on Home, Contact, Footer
   - RC: `9263583`
@@ -28,11 +28,11 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 
 ## Company / contact (current)
 
-- Phone / WhatsApp: `+234 815 613 1470`
+- Phone / WhatsApp (main): `+234 816 277 7605` · Secondary: `+234 815 613 1470`
 - Address: Airport Road, Ikeja, Lagos
 - Hours: Monday–Saturday 10:00 AM – 7:00 PM WAT · Sunday closed
 - RC: 9263583
-- Quote form → `trade@kakveraglobal.com` **or** WhatsApp
+- Quote form → `trade@kakveraglobal.com` **or** WhatsApp (`+234 816 277 7605`)
 - General contact form routes by subject (General / Trade / Imports / Exports / Support)
 - Also used: `info@`, `imports@`, `exports@`, `support@`, `logistics@kakveraglobal.com`
 

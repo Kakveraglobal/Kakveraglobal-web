@@ -7,25 +7,33 @@ const Services = () => {
       title: "Product Sourcing & Supplier Verification",
       description: "We help you find and verify reliable suppliers worldwide, ensuring quality and authenticity of products before purchase.",
       icon: Globe,
-      features: ["Supplier background verification", "Quality assessment", "Price negotiation", "Sample procurement"]
+      features: ["Supplier background verification", "Quality assessment", "Price negotiation", "Sample procurement"],
+      image: "/services-product-sourcing.jpg",
+      imageClassName: "object-contain bg-white",
     },
     {
       title: "Freight Forwarding & Shipping",
       description: "Comprehensive shipping solutions from any global location to Nigeria with full tracking and insurance coverage.",
       icon: Ship,
-      features: ["Sea and air freight", "Cargo insurance", "Real-time tracking", "Consolidated shipping"]
+      features: ["Sea and air freight", "Cargo insurance", "Real-time tracking", "Consolidated shipping"],
+      image: "/services-freight-forwarding.jpg",
+      imageClassName: "object-contain bg-white",
     },
     {
       title: "Customs Clearance & Compliance",
       description: "Expert handling of all customs procedures ensuring fast clearance and full regulatory compliance.",
       icon: FileText,
-      features: ["Documentation preparation", "Duty calculation", "Regulatory compliance", "Fast-track processing"]
+      features: ["Documentation preparation", "Duty calculation", "Regulatory compliance", "Fast-track processing"],
+      image: "/services-customs-clearance.jpg",
+      imageClassName: "object-contain bg-white",
     },
     {
       title: "Import Logistics Management",
       description: "End-to-end logistics coordination from purchase to delivery at your doorstep in Nigeria.",
       icon: Truck,
-      features: ["Door-to-door delivery", "Warehouse storage", "Last-mile delivery", "Inventory management"]
+      features: ["Door-to-door delivery", "Warehouse storage", "Last-mile delivery", "Inventory management"],
+      image: "/services-import-logistics.jpg",
+      imageClassName: "object-cover",
     }
   ];
 
@@ -95,19 +103,9 @@ const Services = () => {
                 </div>
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <img
-                    src={`https://images.pexels.com/photos/${
-                      index === 0 ? '4246120' : 
-                      index === 1 ? '4246083' : 
-                      index === 2 ? '8728380' : 
-                      '4246119'
-                    }/pexels-photo-${
-                      index === 0 ? '4246120' : 
-                      index === 1 ? '4246083' : 
-                      index === 2 ? '8728380' : 
-                      '4246119'
-                    }.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop`}
+                    src={service.image}
                     alt={`${service.title} visualization`}
-                    className="rounded-lg shadow-xl w-full h-80 object-cover"
+                    className={`rounded-lg shadow-xl w-full h-80 ${service.imageClassName}`}
                   />
                 </div>
               </div>

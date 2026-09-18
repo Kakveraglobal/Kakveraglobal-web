@@ -35,14 +35,15 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)'
+            backgroundImage: 'url(/hero-home.jpg)',
           }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/80 via-blue-900/55 to-blue-800/30"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">

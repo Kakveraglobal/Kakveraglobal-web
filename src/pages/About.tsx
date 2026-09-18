@@ -66,11 +66,11 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-100">
               <img
-                src="https://images.pexels.com/photos/8728386/pexels-photo-8728386.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Modern office building representing KAKVERA Global Services headquarters"
-                className="rounded-lg shadow-xl w-full h-96 object-cover"
+                src="/about-our-story.jpg"
+                alt="Thank you for choosing KGS - Kakvera Global Services"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>

@@ -48,7 +48,7 @@ const Contact = () => {
     const message = encodeURIComponent(
       `Quote Request from ${quoteForm.name}\n\n${buildQuoteBody()}`
     );
-    window.open(`https://wa.me/2348156131470?text=${message}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/2348162777605?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleContactSubmit = (e: React.FormEvent) => {
@@ -88,9 +88,14 @@ const Contact = () => {
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
               <Phone className="h-12 w-12 text-blue-700 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone & WhatsApp</h3>
-              <a href="tel:+2348156131470" className="text-blue-700 hover:text-blue-800 font-medium">
-                +234 815 613 1470
-              </a>
+              <div className="space-y-1">
+                <a href="tel:+2348162777605" className="block text-blue-700 hover:text-blue-800 font-medium">
+                  +234 816 277 7605
+                </a>
+                <a href="tel:+2348156131470" className="block text-blue-700 hover:text-blue-800 text-sm">
+                  +234 815 613 1470
+                </a>
+              </div>
             </div>
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
               <Mail className="h-12 w-12 text-blue-700 mx-auto mb-4" />
@@ -444,13 +449,21 @@ const Contact = () => {
                 <p className="text-gray-600 mb-4">
                   Speak directly with our trade specialists for immediate assistance
                 </p>
-                <a
-                  href="tel:+2348156131470"
-                  className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors duration-200"
-                >
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call +234 815 613 1470
-                </a>
+                <div className="flex flex-col items-start gap-3">
+                  <a
+                    href="tel:+2348162777605"
+                    className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors duration-200"
+                  >
+                    <Phone className="h-5 w-5 mr-2" />
+                    Call +234 816 277 7605
+                  </a>
+                  <a
+                    href="tel:+2348156131470"
+                    className="text-blue-700 hover:text-blue-800 font-medium"
+                  >
+                    Secondary: +234 815 613 1470
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -485,7 +498,7 @@ const Contact = () => {
                       Email trade@kakveraglobal.com
                     </a>
                     <a
-                      href="https://wa.me/2348156131470"
+                      href="https://wa.me/2348162777605"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"

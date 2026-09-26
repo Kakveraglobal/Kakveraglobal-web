@@ -319,7 +319,20 @@ const ChinaRates = () => {
       <RateCardHeader
         title="China → Nigeria Shipping Rates"
         description="Updated air and sea rates from China, with Lagos service options plus destination rates for Onitsha, Abuja and Kano."
+        downloadHref="/rate-cards/china-nigeria.jpg"
+        downloadLabel="Download rate card"
       />
+
+      <div className="mb-8 flex flex-wrap gap-3">
+        <a
+          href="/rate-cards/china-nigeria-destinations.jpg"
+          download
+          className="inline-flex items-center justify-center px-5 py-3 bg-white border border-gray-300 text-gray-800 font-medium rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          <Download className="h-4 w-4 mr-2" />
+          Download destination rates
+        </a>
+      </div>
 
       <div className="mb-4 flex items-center gap-2 text-blue-800 font-semibold">
         <Plane className="h-5 w-5" />
@@ -437,6 +450,8 @@ const GadgetsRates = () => (
     <RateCardHeader
       title="China → Nigeria Gadgets Express"
       description="Dedicated express service for phones, tablets, iPads and laptops — fast, secure handling from China to Lagos."
+      downloadHref="/rate-cards/china-nigeria-gadgets.jpg"
+      downloadLabel="Download rate card"
     />
 
     <div className="mb-4 flex items-center gap-2 text-blue-800 font-semibold">

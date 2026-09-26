@@ -148,22 +148,24 @@ const RateCardHeader = ({
 }: {
   title: string;
   description: string;
-  downloadHref: string;
-  downloadLabel: string;
+  downloadHref?: string;
+  downloadLabel?: string;
 }) => (
   <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
     <div>
       <h2 className="text-3xl font-bold text-gray-900 mb-2">{title}</h2>
       <p className="text-lg text-gray-600 max-w-3xl">{description}</p>
     </div>
-    <a
-      href={downloadHref}
-      download
-      className="inline-flex items-center justify-center px-5 py-3 bg-white border border-gray-300 text-gray-800 font-medium rounded-lg hover:bg-gray-50 transition-colors"
-    >
-      <Download className="h-4 w-4 mr-2" />
-      {downloadLabel}
-    </a>
+    {downloadHref && downloadLabel ? (
+      <a
+        href={downloadHref}
+        download
+        className="inline-flex items-center justify-center px-5 py-3 bg-white border border-gray-300 text-gray-800 font-medium rounded-lg hover:bg-gray-50 transition-colors"
+      >
+        <Download className="h-4 w-4 mr-2" />
+        {downloadLabel}
+      </a>
+    ) : null}
   </div>
 );
 
@@ -448,8 +450,6 @@ const GadgetsRates = () => (
     <RateCardHeader
       title="China → Nigeria Gadgets Express"
       description="Dedicated express service for phones, tablets, iPads and laptops — fast, secure handling from China to Lagos."
-      downloadHref="/rate-cards/china-nigeria-gadgets.jpg"
-      downloadLabel="Download gadgets rate card"
     />
 
     <div className="mb-4 flex items-center gap-2 text-blue-800 font-semibold">
@@ -499,7 +499,6 @@ const GadgetsRates = () => (
         tone="red"
         items={[
           'Dedicated Gadgets Express service only.',
-          'Rates via shipping partner NBC Sky Logistics.',
           'Do not include extra batteries, power banks or battery items unless approved by KGS.',
           'Rates are for China to Lagos (clearing included where stated).',
           'Other Nigerian cities (e.g. Abuja, Kano, Onitsha) may attract additional charges.',
@@ -510,7 +509,7 @@ const GadgetsRates = () => (
         title="Why ship gadgets with KGS?"
         tone="green"
         items={[
-          'Competitive rates with trusted partner',
+          'Competitive rates',
           'Safe and secure handling',
           'Fast turnaround time',
           'Assistance with customs clearance',

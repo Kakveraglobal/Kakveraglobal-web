@@ -26,6 +26,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - RC: `9263583`
   - Contact map removed → **Partner With Us — coming soon** placeholder
 - **Brand imagery update** — Home hero, About Our Story, and all four Services section images replaced with KGS branded assets in `/public/`.
+- **China rates refresh** — Updated China → Nigeria + Gadgets Express prices; added Lagos/Onitsha/Abuja/Kano destination rates under China tab.
 
 ## Company / contact (current)
 

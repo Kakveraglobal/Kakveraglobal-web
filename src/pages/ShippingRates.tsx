@@ -88,7 +88,7 @@ const ShippingRates = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               'Air freight is charged on the greater of actual or volumetric weight where applicable.',
-              'Rates apply to Lagos unless otherwise stated. Abuja, Kano and Onitsha are via Skyjet and attract higher rates.',
+              'Rates apply to Lagos unless otherwise stated. Abuja, Kano and Onitsha may attract higher rates.',
               'Batteries, sensitive goods and restricted items must be declared before shipment.',
               'Final charges are based on weight/measurement confirmed at the warehouse.',
               'Rates may change due to airline, customs, exchange-rate or freight-market adjustments.',
@@ -271,7 +271,7 @@ const destinationRates: Record<
   },
   onitsha: {
     label: 'Onitsha',
-    note: 'Via Skyjet · higher destination rate',
+    note: 'Higher destination rate',
     airTransit: '7 – 15 days',
     airNormal: '$10.20/kg',
     airSensitive: '$11.50/kg',
@@ -284,7 +284,7 @@ const destinationRates: Record<
   },
   abuja: {
     label: 'Abuja',
-    note: 'Via Skyjet · higher destination rate',
+    note: 'Higher destination rate',
     airTransit: '7 – 15 days',
     airNormal: '$10.60/kg',
     airSensitive: '$11.80/kg',
@@ -297,7 +297,7 @@ const destinationRates: Record<
   },
   kano: {
     label: 'Kano',
-    note: 'Via Skyjet · higher destination rate',
+    note: 'Higher destination rate',
     airTransit: '7 – 15 days',
     airNormal: '$11.90/kg',
     airSensitive: '$12.80/kg',
@@ -319,20 +319,7 @@ const ChinaRates = () => {
       <RateCardHeader
         title="China → Nigeria Shipping Rates"
         description="Updated air and sea rates from China, with Lagos service options plus destination rates for Onitsha, Abuja and Kano."
-        downloadHref="/rate-cards/china-nigeria.jpg"
-        downloadLabel="Download rate card"
       />
-
-      <div className="mb-8 flex flex-wrap gap-3">
-        <a
-          href="/rate-cards/china-nigeria-destinations.jpg"
-          download
-          className="inline-flex items-center justify-center px-5 py-3 bg-white border border-gray-300 text-gray-800 font-medium rounded-lg hover:bg-gray-50 transition-colors"
-        >
-          <Download className="h-4 w-4 mr-2" />
-          Download destination rates
-        </a>
-      </div>
 
       <div className="mb-4 flex items-center gap-2 text-blue-800 font-semibold">
         <Plane className="h-5 w-5" />
@@ -373,7 +360,7 @@ const ChinaRates = () => {
       <div className="mt-12 mb-4">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Rates by destination</h3>
         <p className="text-gray-600 mb-4">
-          Compare China → Nigeria rates for Lagos, Onitsha, Abuja and Kano. Onitsha, Abuja and Kano move via Skyjet and attract higher rates.
+          Compare China → Nigeria rates for Lagos, Onitsha, Abuja and Kano. Onitsha, Abuja and Kano attract higher destination rates.
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {(Object.keys(destinationRates) as DestinationId[]).map((id) => (
@@ -436,7 +423,7 @@ const ChinaRates = () => {
             'Air shipments below 3kg attract a higher per-kg rate.',
             'Batteries, electronics, liquids, cosmetics and medicines must be declared.',
             'Do not include extra batteries or power banks in normal packages without approval.',
-            'Abuja, Kano and Onitsha deliveries/clearance are via Skyjet and cost more.',
+            'Abuja, Kano and Onitsha deliveries/clearance may attract higher rates.',
             'Confirm with KGS before sending goods to the warehouse.',
           ]}
         />

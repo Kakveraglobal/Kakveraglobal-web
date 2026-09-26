@@ -27,7 +27,8 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Contact map removed → **Partner With Us — coming soon** placeholder
 - **Brand imagery update** — Home hero, About Our Story, and all four Services section images replaced with KGS branded assets in `/public/`.
 - **China rates refresh** — Updated China → Nigeria + Gadgets Express prices; added Lagos/Onitsha/Abuja/Kano destination rates under China tab.
-- **Hidden partners** — Partner brand names (e.g. NBC Sky Logistics, Skyjet) must not appear on the public site. China rate-card downloads removed until partner-safe assets are available; destination notes say “higher destination rate” only.
+- **Hidden partners** — Partner brand names (e.g. NBC Sky Logistics, Skyjet) must not appear on the public site. Destination notes say “higher destination rate” only.
+- **China / Gadgets rate cards restored** — Partner-safe downloads: `china-nigeria.jpg`, `china-nigeria-destinations.jpg`, `china-nigeria-gadgets.jpg`.
 
 ## Company / contact (current)
 
@@ -65,7 +66,6 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 ## Open / next
 
 - **Partner form** — placeholder on Contact; waiting for real form to embed
-- **China / Gadgets rate-card downloads** — re-add when partner-safe (no third-party branding) assets are ready
 - **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
 - **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
 - **PWA** — planned later; wait for explicit go-ahead before starting

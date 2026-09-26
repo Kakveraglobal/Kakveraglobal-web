@@ -65,8 +65,10 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 ## Open / next
 
 - **Partner form** — placeholder on Contact; waiting for real form to embed
+- **China / Gadgets rate-card downloads** — re-add when partner-safe (no third-party branding) assets are ready
 - **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
 - **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
+- **PWA** — planned later; wait for explicit go-ahead before starting
 
 ## Key files
 

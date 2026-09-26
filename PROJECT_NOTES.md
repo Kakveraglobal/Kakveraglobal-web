@@ -6,7 +6,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 18 Sep 2026
+**Last updated:** 26 Sep 2026
 
 ## Done
 
@@ -27,6 +27,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Contact map removed → **Partner With Us — coming soon** placeholder
 - **Brand imagery update** — Home hero, About Our Story, and all four Services section images replaced with KGS branded assets in `/public/`.
 - **China rates refresh** — Updated China → Nigeria + Gadgets Express prices; added Lagos/Onitsha/Abuja/Kano destination rates under China tab.
+- **Hidden partners** — Partner brand names (e.g. NBC Sky Logistics, Skyjet) must not appear on the public site. China rate-card downloads removed until partner-safe assets are available; destination notes say “higher destination rate” only.
 
 ## Company / contact (current)
 

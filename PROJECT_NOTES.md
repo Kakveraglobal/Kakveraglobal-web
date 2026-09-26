@@ -6,7 +6,25 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 26 Sep 2026
+**Last updated:** 26 Sep 2026 (session saved)
+
+## Resume here (26 Sep 2026)
+
+Site is live and up to date on `main`. Latest deploy: [PR #19](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/19).
+
+**Just finished this session:**
+1. Removed public partner names (**NBC Sky Logistics**, **Skyjet**) from Shipping Rates copy.
+2. Restored partner-safe China / Gadgets rate-card downloads (new KGS-only images).
+3. Destination notes say “higher destination rate” only — never name partners on the public site.
+
+**Constraints to remember:**
+- Do **not** put hidden partner names on the public site or in downloadable rate cards.
+- Stay on **GitHub Pages** unless user asks to move.
+- **PWA** — planned later; wait for explicit go-ahead.
+- Deploy by merging to `main` unless user says local-only.
+- Save progress in this file (`PROJECT_NOTES.md`) when asked.
+
+**Useful links:** reopen this agent chat above; live site https://www.kakveraglobal.com ; shipping rates `/shipping-rates` ; track shipment `/track-shipment`.
 
 ## Done
 
@@ -25,10 +43,11 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
   - Hours: Mon–Sat 10am–7pm WAT (Sunday closed); shown on Home, Contact, Footer
   - RC: `9263583`
   - Contact map removed → **Partner With Us — coming soon** placeholder
-- **Brand imagery update** — Home hero, About Our Story, and all four Services section images replaced with KGS branded assets in `/public/`.
-- **China rates refresh** — Updated China → Nigeria + Gadgets Express prices; added Lagos/Onitsha/Abuja/Kano destination rates under China tab.
-- **Hidden partners** — Partner brand names (e.g. NBC Sky Logistics, Skyjet) must not appear on the public site. Destination notes say “higher destination rate” only.
-- **China / Gadgets rate cards restored** — Partner-safe downloads: `china-nigeria.jpg`, `china-nigeria-destinations.jpg`, `china-nigeria-gadgets.jpg`.
+- **Brand imagery update** — Home hero, About Our Story, and all four Services section images replaced with KGS branded assets in `/public/`. [PR #13](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/13)
+- **China rates refresh** — Updated China → Nigeria + Gadgets Express prices; Lagos/Onitsha/Abuja/Kano destination rates under China tab. [PR #14](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/14)
+- **Site title** — “Official Website” in `index.html`. [PR #15](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/15)
+- **Hidden partners** — Removed NBC Sky Logistics [PR #16](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/16) and Skyjet [PR #17](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/17) from public copy. Destination notes say “higher destination rate” only.
+- **China / Gadgets rate cards restored** — Partner-safe downloads live: `china-nigeria.jpg`, `china-nigeria-destinations.jpg`, `china-nigeria-gadgets.jpg`. [PR #19](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/19)
 
 ## Company / contact (current)
 
@@ -62,6 +81,7 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 - Typed rates on the site (not image-only); keep rate-card images as downloads in `/public/rate-cards/`
 - Existing Kakvera blue/white visual language
 - Stay on GitHub Pages for now (SPA deep links use `404.html` fallback)
+- Never show hidden partner brand names on the public site or in rate-card assets
 
 ## Open / next
 
@@ -78,5 +98,6 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 - `src/pages/TrackShipment.tsx` — shipment tracking UI
 - `src/config/shipmentTracking.ts` — Web App URL
 - `google-apps-script/shipment-lookup.gs` — secure sheet lookup
-- `public/rate-cards/` — original rate-card JPGs
+- `public/rate-cards/` — downloadable rate-card JPGs (China, Gadgets, Turkey, UK, Canada)
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on `main`
+- `PROJECT_NOTES.md` — this file (session handoff)

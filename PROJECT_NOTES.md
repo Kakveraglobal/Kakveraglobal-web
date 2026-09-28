@@ -6,21 +6,19 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web`  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 26 Sep 2026 (session saved)
+**Last updated:** 28 Sep 2026 (PWA started)
 
-## Resume here (26 Sep 2026)
+## Resume here (28 Sep 2026)
 
-Site is live and up to date on `main`. Latest deploy: [PR #19](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/19).
+Site is live on `main`. **PWA foundation in progress** on branch `cursor/pwa-foundation-838a`.
 
-**Just finished this session:**
-1. Removed public partner names (**NBC Sky Logistics**, **Skyjet**) from Shipping Rates copy.
-2. Restored partner-safe China / Gadgets rate-card downloads (new KGS-only images).
-3. Destination notes say “higher destination rate” only — never name partners on the public site.
+**Just finished / in flight:**
+1. Partner names removed; China/Gadgets rate cards restored (partner-safe).
+2. **PWA v1 started** — installable web app: manifest, icons, service worker, install/update prompts, offline app shell.
 
 **Constraints to remember:**
 - Do **not** put hidden partner names on the public site or in downloadable rate cards.
 - Stay on **GitHub Pages** unless user asks to move.
-- **PWA** — planned later; wait for explicit go-ahead.
 - Deploy by merging to `main` unless user says local-only.
 - Save progress in this file (`PROJECT_NOTES.md`) when asked.
 
@@ -48,7 +46,7 @@ Site is live and up to date on `main`. Latest deploy: [PR #19](https://github.co
 - **Site title** — “Official Website” in `index.html`. [PR #15](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/15)
 - **Hidden partners** — Removed NBC Sky Logistics [PR #16](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/16) and Skyjet [PR #17](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/17) from public copy. Destination notes say “higher destination rate” only.
 - **China / Gadgets rate cards restored** — Partner-safe downloads live: `china-nigeria.jpg`, `china-nigeria-destinations.jpg`, `china-nigeria-gadgets.jpg`. [PR #19](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/19)
-
+- **PWA foundation** — Installable Progressive Web App: web manifest, app icons, service worker (offline shell + cached assets), install/update prompts.
 ## Company / contact (current)
 
 - Phone / WhatsApp (main): `+234 816 277 7605` · Secondary: `+234 815 613 1470`
@@ -85,10 +83,10 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
+- **PWA polish** — after foundation ships: optional offline rates page messaging, better icon mark (globe-only) if a clean square asset is provided, iOS install guide tip
 - **Partner form** — placeholder on Contact; waiting for real form to embed
 - **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
 - **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
-- **PWA** — planned later; wait for explicit go-ahead before starting
 
 ## Key files
 
@@ -98,6 +96,8 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 - `src/pages/TrackShipment.tsx` — shipment tracking UI
 - `src/config/shipmentTracking.ts` — Web App URL
 - `google-apps-script/shipment-lookup.gs` — secure sheet lookup
-- `public/rate-cards/` — downloadable rate-card JPGs (China, Gadgets, Turkey, UK, Canada)
+- `public/icons/` — PWA / favicon assets
+- `src/components/PwaPrompts.tsx` — install + update banners
+- `vite.config.ts` — Vite + `vite-plugin-pwa`
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on `main`
 - `PROJECT_NOTES.md` — this file (session handoff)

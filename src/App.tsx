@@ -12,6 +12,7 @@ import WhyChooseUs from './pages/WhyChooseUs';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
+import PwaPrompts from './components/PwaPrompts';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <PwaPrompts />
       </div>
     </Router>
   );

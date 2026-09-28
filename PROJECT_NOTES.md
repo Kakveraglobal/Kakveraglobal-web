@@ -83,7 +83,7 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
-- **PWA polish** — after foundation ships: optional offline rates page messaging, better icon mark (globe-only) if a clean square asset is provided, iOS install guide tip
+- **PWA polish** — optional offline rates messaging; cleaner globe-only icon if a square mark asset is provided
 - **Partner form** — placeholder on Contact; waiting for real form to embed
 - **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
 - **Netlify (optional later)** — cleaner SPA routing, PR previews, forms

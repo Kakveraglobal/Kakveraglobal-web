@@ -96,6 +96,7 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 - `src/pages/TrackShipment.tsx` — shipment tracking UI
 - `src/config/shipmentTracking.ts` — Web App URL
 - `google-apps-script/shipment-lookup.gs` — secure sheet lookup
+- `public/rate-cards/` — downloadable rate-card JPGs
 - `public/icons/` — PWA / favicon assets
 - `src/components/PwaPrompts.tsx` — install + update banners
 - `vite.config.ts` — Vite + `vite-plugin-pwa`

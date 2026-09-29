@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
+import { openInstallHelp } from './PwaPrompts';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,11 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const onGetApp = () => {
+    setIsOpen(false);
+    openInstallHelp();
+  };
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
@@ -59,7 +65,15 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={openInstallHelp}
+              className="inline-flex items-center gap-1.5 border border-blue-700 text-blue-700 px-3 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors duration-200"
+            >
+              <Download className="h-4 w-4" />
+              Get the App
+            </button>
             <Link
               to="/contact"
               className="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-800 transition-colors duration-200"
@@ -96,9 +110,17 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <button
+              type="button"
+              onClick={onGetApp}
+              className="flex w-full items-center gap-2 px-3 py-2 mt-2 border border-blue-700 text-blue-700 rounded-lg text-base font-medium hover:bg-blue-50 transition-colors duration-200"
+            >
+              <Download className="h-5 w-5" />
+              Get the App
+            </button>
             <Link
               to="/contact"
-              className="block px-3 py-2 mt-4 bg-blue-700 text-white rounded-lg text-base font-medium hover:bg-blue-800 transition-colors duration-200"
+              className="block px-3 py-2 mt-2 bg-blue-700 text-white rounded-lg text-base font-medium hover:bg-blue-800 transition-colors duration-200"
               onClick={() => setIsOpen(false)}
             >
               Get Quote

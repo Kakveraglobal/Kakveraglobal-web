@@ -172,24 +172,7 @@ const PwaPrompts = () => {
                 This is not an App Store download — add it to your Home Screen from the browser.
               </p>
 
-              {installEvent ? (
-                <div className="mt-3 flex gap-2">
-                  <button
-                    type="button"
-                    onClick={installApp}
-                    className="rounded-lg bg-blue-700 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-800"
-                  >
-                    Install
-                  </button>
-                  <button
-                    type="button"
-                    onClick={dismissInstall}
-                    className="rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                  >
-                    Not now
-                  </button>
-                </div>
-              ) : platform === 'ios' ? (
+              {platform === 'ios' ? (
                 <ol className="mt-3 space-y-2 text-sm text-gray-700">
                   <li className="flex gap-2">
                     <span className="font-semibold text-blue-700">1.</span>
@@ -215,6 +198,23 @@ const PwaPrompts = () => {
                     ··· → Open in Safari first.
                   </li>
                 </ol>
+              ) : installEvent ? (
+                <div className="mt-3 flex gap-2">
+                  <button
+                    type="button"
+                    onClick={installApp}
+                    className="rounded-lg bg-blue-700 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+                  >
+                    Install
+                  </button>
+                  <button
+                    type="button"
+                    onClick={dismissInstall}
+                    className="rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  >
+                    Not now
+                  </button>
+                </div>
               ) : platform === 'android' ? (
                 <ol className="mt-3 space-y-2 text-sm text-gray-700">
                   <li className="flex gap-2">
@@ -244,7 +244,7 @@ const PwaPrompts = () => {
                 </p>
               )}
 
-              {!installEvent ? (
+              {platform === 'ios' || !installEvent ? (
                 <button
                   type="button"
                   onClick={dismissInstall}

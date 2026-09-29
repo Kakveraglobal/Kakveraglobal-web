@@ -78,34 +78,33 @@ const PwaPrompts = () => {
       if (!isStandalone()) setShowInstall(true);
     };
 
+    const onInstalled = () => {
+      setInstalled(true);
+      setShowInstall(false);
+      setInstallEvent(null);
+    };
+
     // Mobile browsers (especially iOS) never fire beforeinstallprompt —
     // show how-to instructions instead after a short delay.
     const timer = window.setTimeout(() => {
-      if (
-        !isStandalone() &&
-        !sessionStorage.getItem(DISMISS_KEY) &&
-        (detectPlatform() === 'ios' ||
-          (detectPlatform() === 'android' && !installEvent) ||
-          (isMobileViewport() && detectPlatform() !== 'desktop'))
-      ) {
+      if (isStandalone() || sessionStorage.getItem(DISMISS_KEY)) return;
+      const p = detectPlatform();
+      if (p === 'ios' || p === 'android' || isMobileViewport()) {
         setShowInstall(true);
       }
     }, 2500);
 
     window.addEventListener('beforeinstallprompt', onBeforeInstall);
     window.addEventListener(OPEN_EVENT, onOpenHelp);
-    window.addEventListener('appinstalled', () => {
-      setInstalled(true);
-      setShowInstall(false);
-      setInstallEvent(null);
-    });
+    window.addEventListener('appinstalled', onInstalled);
 
     return () => {
       window.clearTimeout(timer);
       window.removeEventListener('beforeinstallprompt', onBeforeInstall);
       window.removeEventListener(OPEN_EVENT, onOpenHelp);
+      window.removeEventListener('appinstalled', onInstalled);
     };
-  }, [installEvent]);
+  }, []);
 
   const dismissInstall = () => {
     sessionStorage.setItem(DISMISS_KEY, '1');

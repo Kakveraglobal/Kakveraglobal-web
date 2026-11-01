@@ -3,26 +3,42 @@
 Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 
 **Agent chat (this project):** https://cursor.com/agents/bc-c4c38259-bf1d-4b05-abf8-bd6b4b59838a  
-**Repo:** `Kakveraglobal/Kakveraglobal-web`  
+**Repo:** `Kakveraglobal/Kakveraglobal-web` (only — do not mix with other GitHub projects)  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 28 Sep 2026 (PWA started)
+**Last updated:** 1 Nov 2026 (paused — shop concept reviewed; waiting on next small update)
 
-## Resume here (28 Sep 2026)
+## Resume here (1 Nov 2026)
 
-Site is live on `main`. **PWA foundation in progress** on branch `cursor/pwa-foundation-838a`.
+**Paused on purpose.** User asked to pause the new Shop/Source/Ship concept before implementation, do a smaller update first, then return to the concept.
 
-**Just finished / in flight:**
-1. Partner names removed; China/Gadgets rate cards restored (partner-safe).
-2. **PWA v1 started** — installable web app: manifest, icons, service worker, install/update prompts, offline app shell.
+### In flight (do not forget)
 
-**Constraints to remember:**
-- Do **not** put hidden partner names on the public site or in downloadable rate cards.
+1. **PWA mobile install help** — draft [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) on branch `cursor/pwa-mobile-install-838a`  
+   - iPhone: Safari Share → Add to Home Screen instructions  
+   - Android: Chrome Menu → Install / Add to Home screen  
+   - Navbar **Get the App** button  
+   - **Not merged yet** — waiting for user OK to ship  
+
+2. **Shop / Source / Ship / Cart concept (PAUSED — return after next update)**  
+   - ChatGPT mockups reviewed; **not implemented yet**  
+   - Screenshot assets saved on the agent machine at:  
+     - `/home/ubuntu/.cursor/projects/workspace/assets/3563075b-c265-4daf-b152-b91f74aa0e09.png` (Shop / Discover products)  
+     - `/home/ubuntu/.cursor/projects/workspace/assets/4f1d4cee-5cc6-4952-bbec-dea80d04c781.png` (Source a Product)  
+     - `/home/ubuntu/.cursor/projects/workspace/assets/57e87754-bd29-42ad-b33c-22215355082f.png` (Ship Your Goods)  
+     - `/home/ubuntu/.cursor/projects/workspace/assets/866600b9-0e12-4cff-b5a4-5437c4cf252e.png` (My Cart empty)  
+   - Idea understood: one hub with 4 tabs — Shop (demo catalogue → cart), Source (WhatsApp quote), Ship (WhatsApp shipping request), My Cart. Not a full checkout store; WhatsApp lead capture; demo prices clearly unverified.  
+   - User will specify exact implementation details when we resume.
+
+### Constraints to remember
+
+- Do **not** put hidden partner names (NBC Sky Logistics, Skyjet, etc.) on the public site or in rate cards.
 - Stay on **GitHub Pages** unless user asks to move.
 - Deploy by merging to `main` unless user says local-only.
-- Save progress in this file (`PROJECT_NOTES.md`) when asked.
+- Save progress in this file when asked.
+- Preview before shipping when user asks (learned from PWA preview miss).
 
-**Useful links:** reopen this agent chat above; live site https://www.kakveraglobal.com ; shipping rates `/shipping-rates` ; track shipment `/track-shipment`.
+**Useful links:** this chat above · live site · `/shipping-rates` · `/track-shipment`
 
 ## Done
 
@@ -46,7 +62,8 @@ Site is live on `main`. **PWA foundation in progress** on branch `cursor/pwa-fou
 - **Site title** — “Official Website” in `index.html`. [PR #15](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/15)
 - **Hidden partners** — Removed NBC Sky Logistics [PR #16](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/16) and Skyjet [PR #17](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/17) from public copy. Destination notes say “higher destination rate” only.
 - **China / Gadgets rate cards restored** — Partner-safe downloads live: `china-nigeria.jpg`, `china-nigeria-destinations.jpg`, `china-nigeria-gadgets.jpg`. [PR #19](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/19)
-- **PWA foundation** — Installable Progressive Web App: web manifest, app icons, service worker (offline shell + cached assets), install/update prompts.
+- **PWA foundation** — Installable Progressive Web App: web manifest, app icons, service worker (offline shell + cached assets), install/update prompts. [PR #21](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/21)
+
 ## Company / contact (current)
 
 - Phone / WhatsApp (main): `+234 816 277 7605` · Secondary: `+234 815 613 1470`
@@ -83,7 +100,9 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
-- **PWA polish** — after foundation ships: optional offline rates page messaging, better icon mark (globe-only) if a clean square asset is provided, iOS install guide tip
+- **Next:** user will specify a smaller update first (then return to Shop concept)
+- **Shop / Source / Ship / Cart concept** — paused; mockups reviewed; await implementation brief
+- **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft; ship when user approves
 - **Partner form** — placeholder on Contact; waiting for real form to embed
 - **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
 - **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
@@ -98,7 +117,7 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 - `google-apps-script/shipment-lookup.gs` — secure sheet lookup
 - `public/rate-cards/` — downloadable rate-card JPGs
 - `public/icons/` — PWA / favicon assets
-- `src/components/PwaPrompts.tsx` — install + update banners
+- `src/components/PwaPrompts.tsx` — install + update banners (mobile help on PR #22 branch)
 - `vite.config.ts` — Vite + `vite-plugin-pwa`
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on `main`
 - `PROJECT_NOTES.md` — this file (session handoff)

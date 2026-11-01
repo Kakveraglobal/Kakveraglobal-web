@@ -6,11 +6,13 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web` (only — do not mix with other GitHub projects)  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 1 Nov 2026 (paused — shop concept reviewed; waiting on next small update)
+**Last updated:** 1 Nov 2026 (China peak-season rates)
 
 ## Resume here (1 Nov 2026)
 
-**Paused on purpose.** User asked to pause the new Shop/Source/Ship concept before implementation, do a smaller update first, then return to the concept.
+**Just done:** China → Nigeria + Gadgets Express updated to **peak season** rates from combined rate card (`public/rate-cards/china-nigeria.jpg`).
+
+**Still paused:** Shop/Source/Ship/Cart concept (mockups reviewed; implement after user returns to it).
 
 ### In flight (do not forget)
 
@@ -63,6 +65,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 - **Hidden partners** — Removed NBC Sky Logistics [PR #16](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/16) and Skyjet [PR #17](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/17) from public copy. Destination notes say “higher destination rate” only.
 - **China / Gadgets rate cards restored** — Partner-safe downloads live: `china-nigeria.jpg`, `china-nigeria-destinations.jpg`, `china-nigeria-gadgets.jpg`. [PR #19](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/19)
 - **PWA foundation** — Installable Progressive Web App: web manifest, app icons, service worker (offline shell + cached assets), install/update prompts. [PR #21](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/21)
+- **China peak-season rates** — Combined China → Nigeria rate card (air by city, Gadgets Express, sea by city); typed rates + download updated.
 
 ## Company / contact (current)
 
@@ -100,7 +103,6 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
-- **Next:** user will specify a smaller update first (then return to Shop concept)
 - **Shop / Source / Ship / Cart concept** — paused; mockups reviewed; await implementation brief
 - **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft; ship when user approves
 - **Partner form** — placeholder on Contact; waiting for real form to embed

@@ -88,11 +88,11 @@ const ShippingRates = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               'Air freight is charged on the greater of actual or volumetric weight where applicable.',
-              'Rates apply to Lagos unless otherwise stated. Abuja, Kano and Onitsha may attract higher rates.',
+              'China → Nigeria rates shown are peak season. Abuja, Kano and Onitsha attract higher destination rates.',
               'Batteries, sensitive goods and restricted items must be declared before shipment.',
               'Final charges are based on weight/measurement confirmed at the warehouse.',
               'Rates may change due to airline, customs, exchange-rate or freight-market adjustments.',
-              'Please confirm with KGS before sending goods to any warehouse.',
+              'Please always confirm the latest rates with KGS before sending goods to any warehouse.',
             ].map((note) => (
               <div key={note} className="flex items-start gap-3 bg-blue-50 rounded-lg p-4">
                 <AlertTriangle className="h-5 w-5 text-blue-700 mt-0.5 flex-shrink-0" />
@@ -258,54 +258,54 @@ const destinationRates: Record<
 > = {
   lagos: {
     label: 'Lagos',
-    note: 'Primary destination · separate freight + clearing',
-    airTransit: '7 – 15 days',
-    airNormal: '$9.20/kg',
-    airSensitive: '$9.90/kg',
-    airClearing: '₦1,200/kg',
-    seaTransit: '45 – 60 days',
+    note: 'Peak season · separate freight + clearing',
+    airTransit: '7 – 15 days (sensitive 10 – 15)',
+    airNormal: '$10.50/kg',
+    airSensitive: '$11.50/kg',
+    airClearing: '₦1,500/kg',
+    seaTransit: '50 – 70 days',
     seaRows: [
-      ['Normal goods', '$135/CBM + ₦285,000/CBM clearing'],
-      ['Battery goods', '$145/CBM + ₦295,000/CBM clearing'],
+      ['Normal goods', '$160/CBM + ₦315,000/CBM clearing'],
+      ['Sensitive goods', '$175/CBM + ₦325,000/CBM clearing'],
     ],
   },
   onitsha: {
     label: 'Onitsha',
-    note: 'Higher destination rate',
-    airTransit: '7 – 15 days',
-    airNormal: '$10.20/kg',
-    airSensitive: '$11.50/kg',
-    airClearing: '₦1,600/kg',
-    seaTransit: '45 – 60 days',
+    note: 'Peak season · higher destination rate',
+    airTransit: '7 – 15 days (sensitive 10 – 15)',
+    airNormal: '$11.50/kg',
+    airSensitive: '$12.50/kg',
+    airClearing: '₦1,800/kg',
+    seaTransit: '50 – 70 days',
     seaRows: [
-      ['Normal goods (all-in)', '$395/CBM'],
-      ['Battery goods', 'Accepted — declare before shipment'],
+      ['Normal goods (all-in)', '$400/CBM'],
+      ['Sensitive goods (all-in)', '$440/CBM'],
     ],
   },
   abuja: {
     label: 'Abuja',
-    note: 'Higher destination rate',
-    airTransit: '7 – 15 days',
-    airNormal: '$10.60/kg',
-    airSensitive: '$11.80/kg',
-    airClearing: '₦1,600/kg',
-    seaTransit: '45 – 60 days',
+    note: 'Peak season · higher destination rate',
+    airTransit: '7 – 15 days (sensitive 10 – 15)',
+    airNormal: '$12.00/kg',
+    airSensitive: '$13.00/kg',
+    airClearing: '₦1,800/kg',
+    seaTransit: '50 – 70 days',
     seaRows: [
-      ['Normal goods (all-in)', '$400/CBM'],
-      ['Battery goods', 'Accepted — declare before shipment'],
+      ['Normal goods (all-in)', '$415/CBM'],
+      ['Sensitive goods (all-in)', '$455/CBM'],
     ],
   },
   kano: {
     label: 'Kano',
-    note: 'Higher destination rate',
-    airTransit: '7 – 15 days',
-    airNormal: '$11.90/kg',
-    airSensitive: '$12.80/kg',
-    airClearing: '₦1,600/kg',
-    seaTransit: '45 – 60 days',
+    note: 'Peak season · higher destination rate',
+    airTransit: '7 – 15 days (sensitive 10 – 15)',
+    airNormal: '$13.00/kg',
+    airSensitive: '$14.00/kg',
+    airClearing: '₦1,800/kg',
+    seaTransit: '50 – 70 days',
     seaRows: [
-      ['Normal goods (all-in)', '$450/CBM'],
-      ['Battery goods', 'Accepted — declare before shipment'],
+      ['Normal goods (all-in)', '$480/CBM'],
+      ['Sensitive goods (all-in)', '$520/CBM'],
     ],
   },
 };
@@ -318,34 +318,28 @@ const ChinaRates = () => {
     <div>
       <RateCardHeader
         title="China → Nigeria Shipping Rates"
-        description="Updated air and sea rates from China, with Lagos service options plus destination rates for Onitsha, Abuja and Kano."
+        description="Peak season air and sea rates from China, with Lagos service options plus destination rates for Onitsha, Abuja and Kano. Always confirm with KGS before shipping."
         downloadHref="/rate-cards/china-nigeria.jpg"
         downloadLabel="Download rate card"
       />
 
-      <div className="mb-8 flex flex-wrap gap-3">
-        <a
-          href="/rate-cards/china-nigeria-destinations.jpg"
-          download
-          className="inline-flex items-center justify-center px-5 py-3 bg-white border border-gray-300 text-gray-800 font-medium rounded-lg hover:bg-gray-50 transition-colors"
-        >
-          <Download className="h-4 w-4 mr-2" />
-          Download destination rates
-        </a>
+      <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+        <strong>Peak season rates.</strong> Prices may change due to airline, shipping-line, customs or market
+        conditions. Please always confirm the latest rates with KGS before shipping.
       </div>
 
       <div className="mb-4 flex items-center gap-2 text-blue-800 font-semibold">
         <Plane className="h-5 w-5" />
-        Lagos service options (detailed)
+        Lagos air services (peak season)
       </div>
       <RateTable
         headers={['Service', 'Freight', 'Lagos clearance', 'Transit']}
         rows={[
-          ['Guangzhou (normal goods)', '$9.20/kg', '₦1,200/kg', '7 – 15 days'],
-          ['Hong Kong (sensitive goods)', '$9.90/kg', '₦1,200/kg', '10 – 15 days'],
+          ['Normal goods', '$10.50/kg', '₦1,500/kg', '7 – 15 days'],
+          ['Sensitive goods', '$11.50/kg', '₦1,500/kg', '10 – 15 days'],
           [
             <>
-              Express air cargo
+              Express air (Lagos)
               <span className="ml-2 inline-block text-xs font-semibold text-red-700 bg-red-100 px-2 py-0.5 rounded">
                 Urgent
               </span>
@@ -354,26 +348,26 @@ const ChinaRates = () => {
             '₦1,500/kg',
             '3 – 7 days',
           ],
-          ['Battery goods (Hong Kong)', '$12.00/kg', '₦1,500/kg', '10 – 15 days'],
+          ['Battery goods (Hong Kong)', '$13.00/kg', '₦1,500/kg', '10 – 15 days'],
         ]}
       />
 
       <div className="mt-10 mb-4 flex items-center gap-2 text-green-800 font-semibold">
         <Ship className="h-5 w-5" />
-        Lagos sea cargo
+        Lagos sea cargo (peak season)
       </div>
       <RateTable
         headers={['Service', 'Freight', 'Lagos clearance', 'Transit']}
         rows={[
-          ['China sea shipping (normal goods)', '$135/CBM', '₦285,000/CBM', '45 – 60 days'],
-          ['China sea shipping (battery goods)', '$145/CBM', '₦295,000/CBM', '45 – 60 days'],
+          ['Normal goods', '$160/CBM', '₦315,000/CBM', '50 – 70 days'],
+          ['Sensitive goods', '$175/CBM', '₦325,000/CBM', '50 – 70 days'],
         ]}
       />
 
       <div className="mt-12 mb-4">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Rates by destination</h3>
         <p className="text-gray-600 mb-4">
-          Compare China → Nigeria rates for Lagos, Onitsha, Abuja and Kano. Onitsha, Abuja and Kano attract higher destination rates.
+          Peak season China → Nigeria rates for Lagos, Onitsha, Abuja and Kano. Onitsha, Abuja and Kano attract higher destination rates.
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {(Object.keys(destinationRates) as DestinationId[]).map((id) => (
@@ -420,24 +414,27 @@ const ChinaRates = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
         <InfoList
-          title="Small-volume sea shipments"
+          title="Important information"
           tone="blue"
           items={[
-            'Minimum chargeable volume: 0.1 CBM.',
-            'Shipments below 0.1 CBM are charged as 0.1 CBM.',
-            'Example: 0.05 CBM or 0.08 CBM → charged as 0.1 CBM.',
-            'Example: 0.25 CBM → charged as 0.25 CBM.',
+            'Rates are for China → Nigeria shipping to Lagos, Onitsha, Abuja and Kano.',
+            'Air freight is charged on the greater of actual or volumetric weight.',
+            'Minimum chargeable weight for air cargo: 1 kg.',
+            'Minimum chargeable volume for sea freight: 0.1 CBM (below 0.1 CBM charged as 0.1 CBM).',
+            'Final charges are based on weight/measurement confirmed at the warehouse.',
+            'Other Nigerian cities may attract additional charges.',
+            'Smartphones, laptops, iPads and other electronics are accepted by air.',
           ]}
         />
         <InfoList
-          title="China route notes"
+          title="Declaration & peak season notes"
           tone="red"
           items={[
-            'Air shipments below 3kg attract a higher per-kg rate.',
-            'Batteries, electronics, liquids, cosmetics and medicines must be declared.',
-            'Do not include extra batteries or power banks in normal packages without approval.',
-            'Abuja, Kano and Onitsha deliveries/clearance may attract higher rates.',
-            'Confirm with KGS before sending goods to the warehouse.',
+            'Declare goods properly — especially batteries, liquids, powders, sensitive and branded items.',
+            'Undeclared items may be delayed, seized or destroyed by customs.',
+            'KGS is not responsible for loss, damage or extra charges from undeclared items.',
+            'These are peak season rates and may change at any time.',
+            'Always confirm the latest rates with KGS before shipping.',
           ]}
         />
       </div>
@@ -449,10 +446,15 @@ const GadgetsRates = () => (
   <div>
     <RateCardHeader
       title="China → Nigeria Gadgets Express"
-      description="Dedicated express service for phones, tablets, iPads and laptops — fast, secure handling from China to Lagos."
-      downloadHref="/rate-cards/china-nigeria-gadgets.jpg"
+      description="Peak season express rates for phones, tablets, iPads and laptops — fast, secure handling from China to Lagos. Always confirm with KGS before shipping."
+      downloadHref="/rate-cards/china-nigeria.jpg"
       downloadLabel="Download rate card"
     />
+
+    <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+      <strong>Peak season rates.</strong> Included on the combined China → Nigeria rate card. Please confirm
+      with KGS before shipping.
+    </div>
 
     <div className="mb-4 flex items-center gap-2 text-blue-800 font-semibold">
       <Package className="h-5 w-5" />
@@ -461,17 +463,17 @@ const GadgetsRates = () => (
     <RateTable
       headers={['Item category', 'KGS rate to Lagos', 'Delivery', 'Note']}
       rows={[
-        ['Naked phone (phone only)', '₦18,000 / unit', '3 – 7 working days', 'No box or accessories'],
-        ['Packaged phone (with box)', '₦23,000 / unit', '3 – 7 working days', 'Includes original box & accessories'],
+        ['Naked phone (phone only)', '₦19,000 / unit', '3 – 7 working days', 'No box or accessories'],
+        ['Packaged phone (with box)', '₦24,000 / unit', '3 – 7 working days', 'Includes original box & accessories'],
         [
           'Premium / new-release smartphones',
-          '₦33,000 / unit',
+          '₦35,000 / unit',
           '3 – 7 working days',
           'Latest models & high-value phones',
         ],
         [
           'Tablet / iPad / Laptop',
-          '$16/kg + ₦1,600/kg clearing',
+          '$17/kg + ₦1,600/kg clearing',
           '3 – 7 working days',
           'Tablets, iPads, laptops & similar devices',
         ],

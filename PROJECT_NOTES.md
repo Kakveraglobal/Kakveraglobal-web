@@ -6,31 +6,39 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web` (only — do not mix with other GitHub projects)  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 1 Nov 2026 (China peak-season rates)
+**Last updated:** 17 Nov 2026 (new app brief incoming; shop concept kept on ice)
 
-## Resume here (1 Nov 2026)
+## Resume here (17 Nov 2026)
 
-**Just done:** China → Nigeria + Gadgets Express updated to **peak season** rates from combined rate card (`public/rate-cards/china-nigeria.jpg`).
+**Active next:** User will share details for a **new / actual app** (not the Shop concept). Outline steps for approval before building.
 
-**Still paused:** Shop/Source/Ship/Cart concept (mockups reviewed; implement after user returns to it).
+**Keep for later (do not drop):** Shop / Source / Ship / Cart website concept — still paused; user confirmed we will return to it.
 
-### In flight (do not forget)
+**Recently done:** China → Nigeria + Gadgets Express **peak season** rates live (`public/rate-cards/china-nigeria.jpg`). [PR #25](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/25)
+
+### Parked — Shop / Source / Ship / Cart concept (KEEP)
+
+- Status: **PAUSED** — mockups reviewed only; **not implemented**
+- User (17 Nov 2026): explicitly keep this stored; it is **not** the new app being started now; we will come back to it later
+- Idea: one customer hub with 4 tabs
+  1. **Shop** — demo catalogue → cart (inspiration; not verified stock/checkout)
+  2. **Source a Product** — request form → WhatsApp quote
+  3. **Ship Your Goods** — shipping request form → WhatsApp
+  4. **My Cart** — cart review (empty state in mockup)
+- Not a full e‑commerce checkout; WhatsApp lead capture; demo prices marked unverified
+- Mockup screenshots (agent assets):
+  - `/home/ubuntu/.cursor/projects/workspace/assets/3563075b-c265-4daf-b152-b91f74aa0e09.png` — Shop / Discover products
+  - `/home/ubuntu/.cursor/projects/workspace/assets/4f1d4cee-5cc6-4952-bbec-dea80d04c781.png` — Source a Product
+  - `/home/ubuntu/.cursor/projects/workspace/assets/57e87754-bd29-42ad-b33c-22215355082f.png` — Ship Your Goods
+  - `/home/ubuntu/.cursor/projects/workspace/assets/866600b9-0e12-4cff-b5a4-5437c4cf252e.png` — My Cart empty
+
+### Also in flight
 
 1. **PWA mobile install help** — draft [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) on branch `cursor/pwa-mobile-install-838a`  
    - iPhone: Safari Share → Add to Home Screen instructions  
    - Android: Chrome Menu → Install / Add to Home screen  
    - Navbar **Get the App** button  
-   - **Not merged yet** — waiting for user OK to ship  
-
-2. **Shop / Source / Ship / Cart concept (PAUSED — return after next update)**  
-   - ChatGPT mockups reviewed; **not implemented yet**  
-   - Screenshot assets saved on the agent machine at:  
-     - `/home/ubuntu/.cursor/projects/workspace/assets/3563075b-c265-4daf-b152-b91f74aa0e09.png` (Shop / Discover products)  
-     - `/home/ubuntu/.cursor/projects/workspace/assets/4f1d4cee-5cc6-4952-bbec-dea80d04c781.png` (Source a Product)  
-     - `/home/ubuntu/.cursor/projects/workspace/assets/57e87754-bd29-42ad-b33c-22215355082f.png` (Ship Your Goods)  
-     - `/home/ubuntu/.cursor/projects/workspace/assets/866600b9-0e12-4cff-b5a4-5437c4cf252e.png` (My Cart empty)  
-   - Idea understood: one hub with 4 tabs — Shop (demo catalogue → cart), Source (WhatsApp quote), Ship (WhatsApp shipping request), My Cart. Not a full checkout store; WhatsApp lead capture; demo prices clearly unverified.  
-   - User will specify exact implementation details when we resume.
+   - **Not merged yet** — waiting for user OK to ship
 
 ### Constraints to remember
 
@@ -103,7 +111,8 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
-- **Shop / Source / Ship / Cart concept** — paused; mockups reviewed; await implementation brief
+- **New / actual app** — awaiting user details; then propose steps for approval before build
+- **Shop / Source / Ship / Cart concept** — KEEP parked; return later (not the current app)
 - **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft; ship when user approves
 - **Partner form** — placeholder on Contact; waiting for real form to embed
 - **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first

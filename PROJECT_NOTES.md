@@ -6,7 +6,7 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web` (only — do not mix with other GitHub projects)  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 17 Nov 2026 (Rider app v1 in progress — PWA demo)
+**Last updated:** 17 Nov 2026 (Rider app + Supabase wiring)
 
 ## Resume here (17 Nov 2026)
 
@@ -17,11 +17,21 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 - Verification: phone signup + ID/selfie upload + manual admin approve (OTP SMS later)
 - Orders: admin creates/assigns only
 - Delivery statuses: Assigned → Picked up → Delivered
-- Payouts: store bank/account details + admin can mark paid (no auto-pay yet)
-- Platform: PWA first (`/app`); native stores later
-- Data: **demo mode** in browser localStorage for preview; shared DB (e.g. Supabase) before real multi-device use
+- Payouts: bank details + admin mark paid (manual transfer; no Paystack/Flutterwave yet)
+- Platform: PWA first; later **subdomain** (e.g. `app.` / `riders.`) + Services “Additional Services” link — do after demo is solid
+- Data: **Supabase** when `.env.local` has keys; otherwise **local demo** (`localStorage`)
 
-**Entry:** `/app` · Demo admin `08011111111` / `Admin1234` · Demo rider `08022222222` / `Rider1234`
+**Entry:** `/app` · Demo (no env): admin `08011111111` / `Admin1234` · rider `08022222222` / `Rider1234`
+
+### Supabase setup (do this to leave demo mode)
+1. Create a free project at https://supabase.com  
+2. SQL Editor → run `supabase/schema.sql`  
+3. Auth → Providers → Email → **disable Confirm email**  
+4. Create admin user (see `supabase/create-admin.sql`)  
+5. Project Settings → API → copy URL + anon key into `.env.local`:
+   - `VITE_SUPABASE_URL=...`
+   - `VITE_SUPABASE_ANON_KEY=...`
+6. Restart `npm run dev` — login page should say **Connected to Supabase**
 
 **Keep for later (do not drop):** Shop / Source / Ship / Cart website concept — still paused.
 
@@ -122,15 +132,20 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
-- **Rider app v1** — preview `/app` (demo localStorage); wire shared backend before production riders; then GPS; then Play/App Store
-- **Shop / Source / Ship / Cart concept** — KEEP parked; return later
-- **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft; ship when user approves
-- **Partner form** — placeholder on Contact; waiting for real form to embed
-- **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
+- **Supabase** — user creates project + runs schema; add `.env.local` keys; create admin
+- **Subdomain deploy + Services link** — after demo/backend solid (not under main site forever)
+- **GPS / Play Store / App Store** — later
+- **Shop / Source / Ship / Cart concept** — KEEP parked
+- **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft
+- **Partner form** — placeholder on Contact
 
 ## Key files
 
 - `src/rider-app/` — Rider + admin PWA app (routes under `/app`)
+- `src/rider-app/data/store.ts` — picks Supabase vs local demo
+- `supabase/schema.sql` — tables, RLS, storage policies
+- `supabase/create-admin.sql` — admin user steps
+- `.env.example` — `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
 - `src/pages/Contact.tsx` — quote + contact + partner placeholder
 - `src/pages/Home.tsx` — business hours highlight
 - `src/pages/ShippingRates.tsx` — shipping rates UI

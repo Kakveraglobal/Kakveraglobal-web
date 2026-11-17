@@ -7,6 +7,7 @@ import {
   DEMO_RIDER_PASSWORD,
   DEMO_RIDER_PHONE,
 } from '../data/seed';
+import { getDataMode } from '../data/store';
 import { isValidNgPhone } from '../lib/phone';
 
 export default function LoginPage() {
@@ -16,6 +17,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const mode = getDataMode();
 
   if (!loading && user) {
     return <Navigate to={user.role === 'admin' ? '/app/admin' : '/app/rider'} replace />;
@@ -45,6 +47,9 @@ export default function LoginPage() {
         <img src="/logo.png" alt="Kakvera" className="mx-auto mb-3 h-12 w-12 rounded-sm object-cover object-left" />
         <h1 className="text-2xl font-bold text-gray-900">KAKVERA Rider</h1>
         <p className="mt-1 text-sm text-gray-600">Sign in to manage deliveries (Nigeria)</p>
+        <p className="mt-2 text-xs font-medium text-blue-700">
+          {mode === 'supabase' ? 'Connected to Supabase' : 'Local demo mode'}
+        </p>
       </div>
 
       <form onSubmit={onSubmit} className="space-y-4 rounded-xl border border-blue-100 bg-white p-5 shadow-sm">
@@ -89,18 +94,24 @@ export default function LoginPage() {
         </Link>
       </p>
 
-      <div className="mt-6 rounded-lg border border-dashed border-gray-300 bg-white/70 p-3 text-xs text-gray-600">
-        <p className="font-semibold text-gray-800">Demo accounts (this browser only)</p>
-        <p className="mt-1">
-          Admin: {DEMO_ADMIN_PHONE} / {DEMO_ADMIN_PASSWORD}
-        </p>
-        <p>
-          Rider: {DEMO_RIDER_PHONE} / {DEMO_RIDER_PASSWORD}
-        </p>
-        <p className="mt-2 text-gray-500">
-          Demo mode stores data in this device’s browser. Production will use a shared database.
-        </p>
-      </div>
+      {mode === 'demo' ? (
+        <div className="mt-6 rounded-lg border border-dashed border-gray-300 bg-white/70 p-3 text-xs text-gray-600">
+          <p className="font-semibold text-gray-800">Demo accounts (this browser only)</p>
+          <p className="mt-1">
+            Admin: {DEMO_ADMIN_PHONE} / {DEMO_ADMIN_PASSWORD}
+          </p>
+          <p>
+            Rider: {DEMO_RIDER_PHONE} / {DEMO_RIDER_PASSWORD}
+          </p>
+          <p className="mt-2 text-gray-500">
+            Add Supabase keys in `.env.local` to switch to the shared backend.
+          </p>
+        </div>
+      ) : (
+        <div className="mt-6 rounded-lg border border-blue-100 bg-blue-50/70 p-3 text-xs text-blue-900">
+          Using shared Supabase backend. Sign in with your Kakvera rider/admin account.
+        </div>
+      )}
 
       <p className="mt-6 text-center text-sm">
         <Link to="/" className="text-gray-500 hover:text-blue-700">

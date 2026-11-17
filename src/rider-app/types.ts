@@ -15,7 +15,8 @@ export interface AppUser {
   role: UserRole;
   phone: string;
   fullName: string;
-  passwordHash: string;
+  /** Present in local demo mode only */
+  passwordHash?: string;
   createdAt: string;
   /** Rider-only fields */
   verificationStatus?: VerificationStatus;

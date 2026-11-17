@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../auth/AuthContext';
-import * as store from '../../data/localStore';
+import * as store from '../../data/store';
 import { isValidNgPhone } from '../../lib/phone';
 import type { AppUser } from '../../types';
 

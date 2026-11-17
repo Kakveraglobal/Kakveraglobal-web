@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { OrderStatusBadge } from '../../components/StatusBadge';
-import * as store from '../../data/localStore';
+import * as store from '../../data/store';
 import type { AppUser, DeliveryOrder } from '../../types';
 
 export default function AdminOrdersPage() {

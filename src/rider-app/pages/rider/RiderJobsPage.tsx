@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../auth/AuthContext';
 import { OrderStatusBadge, VerificationBadge } from '../../components/StatusBadge';
-import * as store from '../../data/localStore';
+import * as store from '../../data/store';
 import type { DeliveryOrder } from '../../types';
 
 export default function RiderJobsPage() {

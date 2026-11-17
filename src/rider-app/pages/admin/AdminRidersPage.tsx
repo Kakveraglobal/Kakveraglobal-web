@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../auth/AuthContext';
 import { VerificationBadge } from '../../components/StatusBadge';
-import * as store from '../../data/localStore';
+import * as store from '../../data/store';
 import { formatNgPhoneDisplay } from '../../lib/phone';
 import type { AppUser } from '../../types';
 

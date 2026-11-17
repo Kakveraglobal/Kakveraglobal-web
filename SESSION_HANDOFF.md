@@ -40,11 +40,13 @@ Copy this file into a new Cursor chat to continue. Repo-only: **Kakveraglobal/Ka
 
 **Kakvera Rider app (PWA)** at `/app` — in progress.
 
-**Locked:** riders + admin · Nigeria only · status updates (GPS later) · ID/selfie + admin approve · admin-created orders · bank details + mark paid · PWA first (stores later).
+**Locked:** riders + admin · Nigeria only · status updates (GPS later) · ID/selfie + admin approve · admin-created orders · bank details + mark paid · PWA first · later **subdomain** + Services link.
 
-**Demo:** `/app` · admin `08011111111` / `Admin1234` · rider `08022222222` / `Rider1234` (browser localStorage — not multi-device until backend).
+**Data:** Supabase when env keys set (`supabase/schema.sql`); else local demo at `/app`.
 
-**Not** the Shop/Source/Ship/Cart website concept below. Preview before merge/ship.
+**Demo logins (local only):** admin `08011111111` / `Admin1234` · rider `08022222222` / `Rider1234`
+
+**Not** the Shop concept. Preview before merge/ship.
 
 ---
 
@@ -100,6 +102,6 @@ Copy this file into a new Cursor chat to continue. Repo-only: **Kakveraglobal/Ka
 ## How to continue in a new chat
 
 1. Attach or paste this file / read it from the repo.
-2. Continue **Rider app** — preview `/app`; do not merge until user approves.
-3. Next hardening: shared backend (Supabase or similar) so admin + riders work across devices; then GPS; then Play/App Store.
+2. Continue **Rider app** — help user finish Supabase project setup if keys missing; preview `/app`; do not merge until approved.
+3. After backend works: subdomain deploy + Services “Additional Services” link; then GPS; then stores.
 4. Do not resume Shop concept or merge PR #22 unless user asks.

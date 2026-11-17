@@ -6,12 +6,15 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import * as store from '../data/localStore';
+import { getDataMode } from '../data/store';
+import * as store from '../data/store';
+import { getSupabase, isSupabaseConfigured } from '../lib/supabase';
 import type { AppUser, BankDetails, VerificationStatus } from '../types';
 
 interface AuthContextValue {
   user: AppUser | null;
   loading: boolean;
+  dataMode: 'supabase' | 'demo';
   refresh: () => Promise<void>;
   login: (phone: string, password: string) => Promise<AppUser>;
   signupRider: (input: { fullName: string; phone: string; password: string }) => Promise<AppUser>;
@@ -35,6 +38,7 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AppUser | null>(null);
   const [loading, setLoading] = useState(true);
+  const dataMode = getDataMode();
 
   const refresh = useCallback(async () => {
     const current = await store.getCurrentUser();
@@ -43,6 +47,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     let alive = true;
+    let unsubscribe: (() => void) | undefined;
+
     (async () => {
       try {
         const current = await store.getCurrentUser();
@@ -50,9 +56,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } finally {
         if (alive) setLoading(false);
       }
+
+      if (isSupabaseConfigured()) {
+        const supabase = getSupabase();
+        const { data } = supabase.auth.onAuthStateChange(async (event) => {
+          if (!alive) return;
+          if (event === 'SIGNED_OUT') {
+            setUser(null);
+            return;
+          }
+          try {
+            const current = await store.getCurrentUser();
+            if (alive) setUser(current);
+          } catch {
+            if (alive) setUser(null);
+          }
+        });
+        unsubscribe = () => data.subscription.unsubscribe();
+      }
     })();
+
     return () => {
       alive = false;
+      unsubscribe?.();
     };
   }, []);
 
@@ -60,6 +86,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     () => ({
       user,
       loading,
+      dataMode,
       refresh,
       login: async (phone, password) => {
         const next = await store.login(phone, password);
@@ -90,7 +117,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         await refresh();
       },
     }),
-    [user, loading, refresh]
+    [user, loading, dataMode, refresh]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

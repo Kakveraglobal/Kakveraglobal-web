@@ -59,7 +59,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              to="/app"
+              className="px-3 py-2 text-sm font-medium text-blue-700 hover:text-blue-900"
+            >
+              Rider App
+            </Link>
             <Link
               to="/contact"
               className="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-800 transition-colors duration-200"
@@ -97,8 +103,15 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
+              to="/app"
+              className="block px-3 py-2 text-base font-medium text-blue-700 hover:bg-blue-50"
+              onClick={() => setIsOpen(false)}
+            >
+              Rider App
+            </Link>
+            <Link
               to="/contact"
-              className="block px-3 py-2 mt-4 bg-blue-700 text-white rounded-lg text-base font-medium hover:bg-blue-800 transition-colors duration-200"
+              className="block px-3 py-2 mt-2 bg-blue-700 text-white rounded-lg text-base font-medium hover:bg-blue-800 transition-colors duration-200"
               onClick={() => setIsOpen(false)}
             >
               Get Quote

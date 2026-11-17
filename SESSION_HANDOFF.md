@@ -38,10 +38,15 @@ Copy this file into a new Cursor chat to continue. Repo-only: **Kakveraglobal/Ka
 
 ## Active next (do this first when user continues)
 
-User wants to build an **actual app**.  
-They will send details → agent outlines **steps for approval** → only then start building.
+**Kakvera Rider app (PWA)** at `/app` — in progress.
 
-This is **not** the Shop/Source/Ship/Cart website concept below.
+**Locked:** riders + admin · Nigeria only · status updates (GPS later) · ID/selfie + admin approve · admin-created orders · bank details + mark paid · PWA first · later **subdomain** + Services link.
+
+**Data:** Supabase when env keys set (`supabase/schema.sql`); else local demo at `/app`.
+
+**Demo logins (local only):** admin `08011111111` / `Admin1234` · rider `08022222222` / `Rider1234`
+
+**Not** the Shop concept. Preview before merge/ship.
 
 ---
 
@@ -96,7 +101,7 @@ This is **not** the Shop/Source/Ship/Cart website concept below.
 
 ## How to continue in a new chat
 
-1. Attach or paste this file.
-2. Ask user for the **new app details**.
-3. Reply with a clear **step plan** and wait for approval before coding.
+1. Attach or paste this file / read it from the repo.
+2. Continue **Rider app** — help user finish Supabase project setup if keys missing; preview `/app`; do not merge until approved.
+3. After backend works: subdomain deploy + Services “Additional Services” link; then GPS; then stores.
 4. Do not resume Shop concept or merge PR #22 unless user asks.

@@ -6,13 +6,34 @@ Ongoing notes for the Kakvera website so later sessions can pick up quickly.
 **Repo:** `Kakveraglobal/Kakveraglobal-web` (only — do not mix with other GitHub projects)  
 **Live site:** https://www.kakveraglobal.com (GitHub Pages)  
 **Stack:** Vite + React + TypeScript + Tailwind  
-**Last updated:** 17 Nov 2026 (new app brief incoming; shop concept kept on ice)
+**Last updated:** 17 Nov 2026 (Rider app + Supabase wiring)
 
 ## Resume here (17 Nov 2026)
 
-**Active next:** User will share details for a **new / actual app** (not the Shop concept). Outline steps for approval before building.
+**Active:** **Kakvera Rider app** (PWA) — riders + admin, Nigeria only, status updates first (GPS later). Play Store / App Store later.
 
-**Keep for later (do not drop):** Shop / Source / Ship / Cart website concept — still paused; user confirmed we will return to it.
+**Locked v1 decisions**
+- Roles: rider + admin
+- Verification: phone signup + ID/selfie upload + manual admin approve (OTP SMS later)
+- Orders: admin creates/assigns only
+- Delivery statuses: Assigned → Picked up → Delivered
+- Payouts: bank details + admin mark paid (manual transfer; no Paystack/Flutterwave yet)
+- Platform: PWA first; later **subdomain** (e.g. `app.` / `riders.`) + Services “Additional Services” link — do after demo is solid
+- Data: **Supabase** when `.env.local` has keys; otherwise **local demo** (`localStorage`)
+
+**Entry:** `/app` · Demo (no env): admin `08011111111` / `Admin1234` · rider `08022222222` / `Rider1234`
+
+### Supabase setup (do this to leave demo mode)
+1. Create a free project at https://supabase.com  
+2. SQL Editor → run `supabase/schema.sql`  
+3. Auth → Providers → Email → **disable Confirm email**  
+4. Create admin user (see `supabase/create-admin.sql`)  
+5. Project Settings → API → copy URL + anon key into `.env.local`:
+   - `VITE_SUPABASE_URL=...`
+   - `VITE_SUPABASE_ANON_KEY=...`
+6. Restart `npm run dev` — login page should say **Connected to Supabase**
+
+**Keep for later (do not drop):** Shop / Source / Ship / Cart website concept — still paused.
 
 **Recently done:** China → Nigeria + Gadgets Express **peak season** rates live (`public/rate-cards/china-nigeria.jpg`). [PR #25](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/25)
 
@@ -111,15 +132,20 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 
 ## Open / next
 
-- **New / actual app** — awaiting user details; then propose steps for approval before build
-- **Shop / Source / Ship / Cart concept** — KEEP parked; return later (not the current app)
-- **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft; ship when user approves
-- **Partner form** — placeholder on Contact; waiting for real form to embed
-- **Signup / login (paused)** — needs Supabase/Firebase or similar; decide purpose first
-- **Netlify (optional later)** — cleaner SPA routing, PR previews, forms
+- **Supabase** — user creates project + runs schema; add `.env.local` keys; create admin
+- **Subdomain deploy + Services link** — after demo/backend solid (not under main site forever)
+- **GPS / Play Store / App Store** — later
+- **Shop / Source / Ship / Cart concept** — KEEP parked
+- **PWA mobile install** — [PR #22](https://github.com/Kakveraglobal/Kakveraglobal-web/pull/22) draft
+- **Partner form** — placeholder on Contact
 
 ## Key files
 
+- `src/rider-app/` — Rider + admin PWA app (routes under `/app`)
+- `src/rider-app/data/store.ts` — picks Supabase vs local demo
+- `supabase/schema.sql` — tables, RLS, storage policies
+- `supabase/create-admin.sql` — admin user steps
+- `.env.example` — `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
 - `src/pages/Contact.tsx` — quote + contact + partner placeholder
 - `src/pages/Home.tsx` — business hours highlight
 - `src/pages/ShippingRates.tsx` — shipping rates UI
@@ -132,3 +158,4 @@ Sheet columns (A–S): KGS Shipment ID, Date Booked, Customer Name, Phone, Route
 - `vite.config.ts` — Vite + `vite-plugin-pwa`
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on `main`
 - `PROJECT_NOTES.md` — this file (session handoff)
+- `SESSION_HANDOFF.md` — short handoff for new chats

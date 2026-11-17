@@ -38,10 +38,13 @@ Copy this file into a new Cursor chat to continue. Repo-only: **Kakveraglobal/Ka
 
 ## Active next (do this first when user continues)
 
-User wants to build an **actual app**.  
-They will send details → agent outlines **steps for approval** → only then start building.
+**Kakvera Rider app (PWA)** at `/app` — in progress.
 
-This is **not** the Shop/Source/Ship/Cart website concept below.
+**Locked:** riders + admin · Nigeria only · status updates (GPS later) · ID/selfie + admin approve · admin-created orders · bank details + mark paid · PWA first (stores later).
+
+**Demo:** `/app` · admin `08011111111` / `Admin1234` · rider `08022222222` / `Rider1234` (browser localStorage — not multi-device until backend).
+
+**Not** the Shop/Source/Ship/Cart website concept below. Preview before merge/ship.
 
 ---
 
@@ -96,7 +99,7 @@ This is **not** the Shop/Source/Ship/Cart website concept below.
 
 ## How to continue in a new chat
 
-1. Attach or paste this file.
-2. Ask user for the **new app details**.
-3. Reply with a clear **step plan** and wait for approval before coding.
+1. Attach or paste this file / read it from the repo.
+2. Continue **Rider app** — preview `/app`; do not merge until user approves.
+3. Next hardening: shared backend (Supabase or similar) so admin + riders work across devices; then GPS; then Play/App Store.
 4. Do not resume Shop concept or merge PR #22 unless user asks.
